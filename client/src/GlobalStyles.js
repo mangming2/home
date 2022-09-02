@@ -25,7 +25,9 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     border: 0;
     font-size: 100%;
-    font: inherit;
+    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
+    box-sizing: border-box;
     vertical-align: baseline;
 }
 
