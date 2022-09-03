@@ -9,6 +9,7 @@ import JoinPage from './pages/JoinPage';
 
 import './App.css';
 import GlobalStyles from './GlobalStyles';
+import MainFooter from './components/MainFooter';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route exact path="/contact" element={<ContactPage />} />
         <Route exact path="/join" element={<JoinPage />} />
       </Routes>
+      <MainFooter />
     </>
   );
 }

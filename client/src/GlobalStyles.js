@@ -31,6 +31,11 @@ const GlobalStyles = createGlobalStyle`
     vertical-align: baseline;
 }
 
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
 /* HTML5 display-role reset for older browsers */
 
   article, aside, details, figcaption, figure, 
