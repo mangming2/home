@@ -6,7 +6,7 @@ import InstagramLogo from '../assets/instagram.svg';
 import MediumLogo from '../assets/medium.svg';
 import TelegramLogo from '../assets/telegram.svg';
 
-const Footer = styled.footer`
+const StyledFooter = styled.footer`
   display: flex;
   height: 300px;
   width: 100%;
@@ -75,8 +75,8 @@ const FollowUsLogoImg = styled.img`
   height: 50px;
 `;
 
-const MainFooter = () => (
-  <Footer>
+const Footer = () => (
+  <StyledFooter>
     <FooterContainer>
       <FooterLogo>
         <img src={LogoGray} alt="블록체인 밸리"></img>
@@ -108,7 +108,7 @@ const MainFooter = () => (
         </FollowUsLogoLink>
       </FollowUsLogos>
     </FollowUs>
-  </Footer>
+  </StyledFooter>
 );
 
-export default MainFooter;
+export default Footer;

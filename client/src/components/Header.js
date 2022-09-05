@@ -2,7 +2,7 @@ import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import LogoWhite from '../assets/logo_white.svg';
 
-const Header = styled.header`
+const StyledHeader = styled.header`
   position: fixed;
   top: 0;
   left: 0;
@@ -76,8 +76,8 @@ const PageTxt = styled.span`
   vertical-align: center;
 `;
 
-const MainHeader = () => (
-  <Header>
+const Header = () => (
+  <StyledHeader>
     <MainLogo>
       <LogoLink to="/">
         <img src={LogoWhite} alt="블록체인 밸리" />
@@ -112,7 +112,7 @@ const MainHeader = () => (
         </PageItem>
       </PageList>
     </Nav>
-  </Header>
+  </StyledHeader>
 );
 
-export default MainHeader;
+export default Header;
