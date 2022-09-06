@@ -1,9 +1,9 @@
-import MainInner from '../UI/MainInner';
+import Main from '../UI/Main';
 
 const LogPage = () => (
-  <MainInner>
+  <Main>
     <h2>Log page</h2>
-  </MainInner>
+  </Main>
 );
 
 export default LogPage;

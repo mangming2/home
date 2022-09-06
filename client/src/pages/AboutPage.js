@@ -1,9 +1,9 @@
-import MainInner from '../UI/MainInner';
+import Main from '../UI/Main';
 
 const AboutPage = () => (
-  <MainInner>
+  <Main>
     <h2>About Us page</h2>
-  </MainInner>
+  </Main>
 );
 
 export default AboutPage;

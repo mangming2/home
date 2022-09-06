@@ -1,9 +1,9 @@
-import MainInner from '../UI/MainInner';
+import Main from '../UI/Main';
 
 const ContactPage = () => (
-  <MainInner>
+  <Main>
     <h2>Contact page</h2>
-  </MainInner>
+  </Main>
 );
 
 export default ContactPage;

@@ -1,9 +1,9 @@
-import MainInner from '../UI/MainInner';
+import Main from '../UI/Main';
 
 const JoinPage = () => (
-  <MainInner>
+  <Main>
     <h2>Join Us page</h2>
-  </MainInner>
+  </Main>
 );
 
 export default JoinPage;

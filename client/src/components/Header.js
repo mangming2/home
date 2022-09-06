@@ -13,7 +13,7 @@ const StyledHeader = styled.header`
   height: 108px;
 `;
 
-const MainLogo = styled.h1`
+const Logo = styled.h1`
   margin-left: 41.5px;
 `;
 
@@ -78,14 +78,14 @@ const PageTxt = styled.span`
 
 const Header = () => (
   <StyledHeader>
-    <MainLogo>
+    <Logo>
       <LogoLink to="/">
         <img src={LogoWhite} alt="블록체인 밸리" />
       </LogoLink>
-    </MainLogo>
+    </Logo>
     <Nav>
       <PageList>
-        <PageItem style={{ textDecoration: 'none' }}>
+        <PageItem>
           <PageLink to="/">
             <PageTxt>Home</PageTxt>
           </PageLink>

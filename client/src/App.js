@@ -6,6 +6,7 @@ import AboutPage from './pages/AboutPage';
 import LogPage from './pages/LogPage';
 import ContactPage from './pages/ContactPage';
 import JoinPage from './pages/JoinPage';
+import NotFoundPage from './pages/NotFoundPage';
 import Footer from './components/Footer';
 
 import './App.css';
@@ -23,6 +24,7 @@ function App() {
         <Route exact path="/log" element={<LogPage />} />
         <Route exact path="/contact" element={<ContactPage />} />
         <Route exact path="/join" element={<JoinPage />} />
+        <Route path="*" element={<NotFoundPage />}></Route>
       </Routes>
       <Footer />
     </>

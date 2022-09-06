@@ -1,9 +1,9 @@
-import MainInner from '../UI/MainInner';
+import Main from '../UI/Main';
 
 const HomePage = () => (
-  <MainInner>
+  <Main>
     <h2>Home page</h2>
-  </MainInner>
+  </Main>
 );
 
 export default HomePage;
