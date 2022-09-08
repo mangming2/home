@@ -2,11 +2,14 @@ import { Route, Routes } from 'react-router-dom';
 
 import Header from './components/Header';
 import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
+import AboutPage from './pages/About/AboutPage';
 import LogPage from './pages/LogPage';
 import ContactPage from './pages/ContactPage';
 import JoinPage from './pages/JoinPage';
 import NotFoundPage from './pages/NotFoundPage';
+import DetailPage from './pages/About/DetailPage';
+import SessionPage from './pages/About/SessionPage';
+import MembersPage from './pages/About/MembersPage';
 import Footer from './components/Footer';
 
 import './App.css';
