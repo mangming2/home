@@ -11,6 +11,8 @@ const StyledHeader = styled.header`
   justify-content: space-between;
   align-items: center;
   height: 108px;
+  background-color: #0b0811;
+  z-index: 9900;
 `;
 
 const Logo = styled.h1`
