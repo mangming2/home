@@ -1,5 +1,5 @@
-import { Route, Routes } from 'react-router-dom';
-
+import { Route, Routes, useLocation } from 'react-router-dom';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import Header from './components/Header';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/About/AboutPage';
@@ -17,6 +17,8 @@ function App() {
     <>
       <GlobalStyles />
       <Header />
+      {/* <TransitionGroup className="transition-group">
+        <CSSTransition key={location.pathname} timeout={300} className="transition"> */}
       <Routes>
         <Route exact path="/" element={<HomePage />} />
         <Route exact path="/home" element={<HomePage />} />
@@ -26,6 +28,8 @@ function App() {
         <Route exact path="/join" element={<JoinPage />} />
         <Route path="*" element={<NotFoundPage />}></Route>
       </Routes>
+      {/* </CSSTransition>
+      </TransitionGroup> */}
       <Footer />
     </>
   );
