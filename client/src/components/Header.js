@@ -10,7 +10,7 @@ const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 108px;
+  height: 100px;
   background-color: #0b0811;
   z-index: 9900;
 `;
@@ -37,7 +37,7 @@ const PageList = styled.ul`
 
 const PageItem = styled.li`
   width: 110px;
-  margin-left: 42px;
+  margin-left: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -73,7 +73,7 @@ const PageLink = styled(NavLink)`
 `;
 
 const PageTxt = styled.span`
-  font-size: 24px;
+  font-size: 20px;
   letter-spacing: -3%;
   vertical-align: center;
 `;

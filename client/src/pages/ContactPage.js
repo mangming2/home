@@ -1,8 +1,20 @@
+import styled from 'styled-components';
 import Main from '../components/Main';
+import EmailToUs from '../components/EmailToUs';
+import ContactDetail from '../components/ContactDetail';
+
+const ContactBox = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 5vw;
+`;
 
 const ContactPage = () => (
   <Main>
-    <h2>Contact page</h2>
+    <ContactBox>
+      <ContactDetail />
+      <EmailToUs />
+    </ContactBox>
   </Main>
 );
 

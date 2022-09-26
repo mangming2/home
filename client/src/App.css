@@ -1,0 +1,45 @@
+.page-slider-enter {
+  opacity: 0.01;
+}
+
+.page-slider-enter.page-slider-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.page-slider-exit {
+  opacity: 1;
+}
+
+.page-slider-exit.page-slider-exit-active {
+  opacity: 0.01;
+}
+
+.transition-group {
+  position: relative;
+  background-color: #000;
+}
+
+.fade-enter,
+.fade-appear {
+  opacity: 0;
+  transform: translateY(3%);
+}
+
+.fade-enter-active,
+.fade-appear-active {
+  opacity: 1;
+  transition: opacity 800ms, transform 800ms;
+  transform: translateY(0);
+}
+
+.fade-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 800ms transform 800ms;
+  transform: translateY(3%);
+}

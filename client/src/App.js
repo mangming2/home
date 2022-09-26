@@ -1,5 +1,5 @@
-import { Route, Routes } from 'react-router-dom';
-
+import { Route, Routes, useLocation } from 'react-router-dom';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import Header from './components/Header';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/About/AboutPage';
@@ -8,24 +8,28 @@ import ContactPage from './pages/ContactPage';
 import JoinPage from './pages/JoinPage';
 import NotFoundPage from './pages/NotFoundPage';
 import Footer from './components/Footer';
-
 import './App.css';
 import GlobalStyles from './GlobalStyles';
 
 function App() {
+  const location = useLocation();
   return (
     <>
       <GlobalStyles />
       <Header />
-      <Routes>
-        <Route exact path="/" element={<HomePage />} />
-        <Route exact path="/home" element={<HomePage />} />
-        <Route exact path="/about" element={<AboutPage />} />
-        <Route exact path="/log" element={<LogPage />} />
-        <Route exact path="/contact" element={<ContactPage />} />
-        <Route exact path="/join" element={<JoinPage />} />
-        <Route path="*" element={<NotFoundPage />}></Route>
-      </Routes>
+      <TransitionGroup>
+        <CSSTransition key={location.pathname} classNames="fade" timeout={800}>
+          <Routes location={location}>
+            <Route exact path="/" element={<HomePage style={{ position: 'absolute' }} />} />
+            <Route exact path="/home" element={<HomePage style={{ position: 'absolute' }} />} />
+            <Route exact path="/about" element={<AboutPage style={{ position: 'absolute' }} />} />
+            <Route exact path="/log" element={<LogPage style={{ position: 'absolute' }} />} />
+            <Route exact path="/contact" element={<ContactPage style={{ position: 'absolute' }} />} />
+            <Route exact path="/join" element={<JoinPage style={{ position: 'absolute' }} />} />
+            <Route path="*" element={<NotFoundPage />}></Route>
+          </Routes>
+        </CSSTransition>
+      </TransitionGroup>
       <Footer />
     </>
   );

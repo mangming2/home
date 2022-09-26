@@ -3,6 +3,45 @@ import { useEffect, useState } from 'react';
 import XMLParser from 'react-xml-parser';
 import styled from 'styled-components';
 
+const CardBox = styled.div`
+  background-color: white;
+  width: 230px;
+  border-radius: 10px;
+  margin: 10px;
+  height: 290px;
+  cursor: pointer;
+  &:hover {
+    border: 0.5px solid rgba(6, 61, 215);
+    box-shadow: 0px 0px 30px rgba(6, 61, 215, 0.8);
+  }
+`;
+const CardImg = styled.img`
+  width: 100%;
+  height: 65%;
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+`;
+const Detail = styled.div`
+  padding-left: 15px;
+`;
+const Title = styled.p`
+  font-weight: 600;
+  padding-top: 15px;
+  color: black;
+  font-size: 16px;
+`;
+const Author = styled.p`
+  font-size: 13px;
+  padding-top: 14px;
+  color: black;
+`;
+const Date = styled.p`
+  color: rgba(171, 171, 171, 1);
+  padding-top: 12px;
+  padding-bottom: 7px;
+  font-size: 12px;
+`;
+
 function MediumCard() {
   const [info, setInfo] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -38,6 +77,7 @@ function MediumCard() {
       oneData.url = url;
       totalData.push(oneData);
     }
+    console.log(totalData);
     return totalData;
   }
 
@@ -60,44 +100,6 @@ function MediumCard() {
   if (loading) return <div>아직 로딩중이에여..기다려주세여</div>;
   if (error) return <div>오잉 에러가 발생해써요..🥺</div>;
   if (!info) return null;
-  const CardBox = styled.div`
-    background-color: white;
-    width: 230px;
-    border-radius: 10px;
-    margin: 10px;
-    height: 290px;
-    cursor: pointer;
-    :hover {
-      border: 1px solid blue;
-      box-shadow: blue 0px 3px 20px;
-    }
-  `;
-  const CardImg = styled.img`
-    width: 100%;
-    height: 65%;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-  `;
-  const Detail = styled.div`
-    padding-left: 15px;
-  `;
-  const Title = styled.p`
-    font-weight: 600;
-    padding-top: 15px;
-    color: black;
-    font-size: 16px;
-  `;
-  const Author = styled.p`
-    font-size: 13px;
-    padding-top: 14px;
-    color: black;
-  `;
-  const Date = styled.p`
-    color: rgba(171, 171, 171, 1);
-    padding-top: 12px;
-    padding-bottom: 7px;
-    font-size: 12px;
-  `;
   const cards = info.map((oneInfo, index) => (
     <CardBox key={index} onClick={() => window.open(oneInfo.url, '_blank')}>
       <CardImg src={oneInfo.img} alt="이미지 없음"></CardImg>
