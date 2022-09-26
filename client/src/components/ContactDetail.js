@@ -9,10 +9,10 @@ import Medium from '../assets/medium.svg';
 
 const Box = styled.div`
   height: 100vh;
-  padding: 0vh 0vh 1vh 5vh;
-  margin-left: 15px;
-  margin-top: 15px;
-  width: 50vw;
+  /* padding: 0vh 0vh 1vh 5vh; */
+  /* margin-left: 15px;
+  margin-top: 15px; */
+  width: 45vw;
 `;
 
 const FooterContainer = styled.div`
@@ -34,7 +34,7 @@ const FooterTitle = styled.h3`
 const Title = styled.p`
   font-size: 4vw;
   font-weight: 700;
-  margin: 30px 0px 20px 15px;
+  margin: 0px 0px 20px 15px;
 `;
 
 const Detail = styled.p`

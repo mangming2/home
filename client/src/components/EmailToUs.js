@@ -2,24 +2,22 @@ import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 import TextField from '@mui/material/TextField';
 import axios from 'axios';
-
 import useInput from '../hooks/useInput';
+import Modal from './Modal';
 
 const FormBox = styled.div`
-  /* width: 40vh; */
-  /* transform: translate(-50%, -50%); */
   background-color: #fafafa;
   border-radius: 7px;
-  /* padding: 70px 100px; */
   width: 35vw;
-  padding: 2vh 6vh 5vh 6vh;
+  padding: 1vh 6vh 5vh 6vh;
   color: black;
-  position: absolute;
-  left: 75%;
-  top: 55%;
-  transform: translate(-50%, -50%);
+  /* position: absolute;
+  left: 60%;
+  top: 15%; */
+  /* transform: translate(-50%, -50%); */
   height: 80vh;
   overflow: hidden;
+  margin-left: 8vw;
 `;
 
 const TextBox = styled.textarea`
@@ -49,7 +47,7 @@ const Button = styled.button`
   background-color: #84a4da;
   border: 0px;
   width: 8vw;
-  height: 45px;
+  height: 5vh;
   color: white;
   transition: all 0.2s ease-in-out;
   font-weight: 600;
@@ -79,9 +77,10 @@ const EmailToUs = () => {
   const [name, onChangeName, resetName] = useInput('');
   const [email, onChangeEmail, resetEmail] = useInput('');
   const [text, onChangeText, resetText] = useInput('');
-
+  const [openModal, setOpenModal] = useState(false);
   const sendEmail = e => {
     e.preventDefault();
+    const lineText = text.replace(/\n/g, '<br/>');
     const data = {
       service_id: 'service_ccu4eqe',
       template_id: 'template_s8b4xid',
@@ -89,7 +88,7 @@ const EmailToUs = () => {
       template_params: {
         name,
         email,
-        text,
+        lineText,
       },
     };
     axios({
@@ -102,8 +101,9 @@ const EmailToUs = () => {
         console.log('working');
       })
       .catch(() => {
-        console.log('error');
+        console.log('error....🥺');
       });
+    setOpenModal(true);
 
     resetName();
     resetEmail();
@@ -111,40 +111,44 @@ const EmailToUs = () => {
   };
 
   return (
-    <FormBox>
-      <form ref={form} onSubmit={sendEmail} autocomplete="off">
-        <TextFieldBox>
-          <TextField
-            id="standard-basic"
-            label="Name"
-            variant="standard"
-            required
-            size="small"
-            margin="normal"
-            value={name}
-            onChange={onChangeName}
-          />
-          <TextField
-            id="standard-basic"
-            type="email"
-            label="Email"
-            variant="standard"
-            required
-            size="small"
-            margin="none"
-            value={email}
-            onChange={onChangeEmail}
-          />
-        </TextFieldBox>
-        <FormBottom>
-          <TextLabel>Message</TextLabel>
-          <TextBox name="text" required value={text} onChange={onChangeText} />
-          <ButtonBox>
-            <Button type="submit">Send</Button>
-          </ButtonBox>
-        </FormBottom>
-      </form>
-    </FormBox>
+    <>
+      <FormBox>
+        <form ref={form} onSubmit={sendEmail} autoComplete="off">
+          <TextFieldBox>
+            <TextField
+              id="standard-basic"
+              label="Name"
+              variant="standard"
+              required
+              size="small"
+              margin="normal"
+              value={name}
+              onChange={onChangeName}
+            />
+
+            <TextField
+              id="standard-basic"
+              type="email"
+              label="Email"
+              variant="standard"
+              required
+              size="small"
+              margin="none"
+              value={email}
+              onChange={onChangeEmail}
+            />
+          </TextFieldBox>
+          <FormBottom>
+            <TextLabel>Message</TextLabel>
+            <TextBox name="text" required value={text} onChange={onChangeText} wrap="hard" cols="10" />
+            <ButtonBox>
+              <Button type="submit">Send</Button>
+            </ButtonBox>
+          </FormBottom>
+        </form>
+      </FormBox>
+      {openModal ? <Modal setOpenModal={setOpenModal} openModal={openModal} /> : null}
+    </>
   );
 };
 

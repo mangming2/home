@@ -1,13 +1,20 @@
+import styled from 'styled-components';
 import Main from '../components/Main';
 import EmailToUs from '../components/EmailToUs';
 import ContactDetail from '../components/ContactDetail';
-import Modal from '../components/Modal';
+
+const ContactBox = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 5vw;
+`;
 
 const ContactPage = () => (
   <Main>
-    <ContactDetail />
-    <EmailToUs />
-    <Modal />
+    <ContactBox>
+      <ContactDetail />
+      <EmailToUs />
+    </ContactBox>
   </Main>
 );
 

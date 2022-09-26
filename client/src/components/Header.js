@@ -10,7 +10,7 @@ const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 108px;
+  height: 100px;
   background-color: #0b0811;
   z-index: 9900;
 `;
