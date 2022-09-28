@@ -1,34 +1,48 @@
+import Lottie from 'lottie-react';
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import TimelineObserver from 'react-timeline-animation';
+import animationData from '../animations/98428-arrow-down-purple.json';
+
 import Main from '../components/Main';
+import JoinDeatil from '../components/JoinDetail';
+
+const PageBox = styled.div`
+  width: 100%;
+  height: ${props => `${props.height}px`};
+  /* background-color: ${props => props.bgcolor}; */
+  display: flex;
+  text-align: center;
+  align-items: center;
+  padding-bottom: ${props => `${props.paddingBottom}px`};
+  overflow: auto;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 22vh;
+`;
 
 const Title = styled.p`
-  font-size: 32px;
+  font-size: 42px;
   font-weight: 600;
   text-align: center;
-  padding: 120px 100px 30px 100px;
-  text-shadow: 0px 0px 50px rgba(6, 61, 215, 0.8);
-`;
-const Middle = styled.p`
-  font-size: 23px;
-  text-align: center;
-  margin-left: 200px;
-  margin-right: 200px;
-  padding-top: 30px;
+  text-shadow: 0px 0px 50px rgba(6, 61, 285, 0.8);
   line-height: 50px;
-  font-weight: 300;
+  margin: 10px 20vw;
 `;
+
 const NotNowTop = styled.p`
   font-size: 25px;
   text-align: center;
   font-weight: 600;
-  margin-top: 150px;
-  padding: 30px;
+  margin-bottom: 20px;
 `;
 const NotNow = styled.p`
   font-size: 23px;
   text-align: center;
   font-weight: 300;
+`;
+const TimeLineDiv = styled.div`
+  margin-bottom: 15vh;
 `;
 
 function JoinPage() {
@@ -42,31 +56,45 @@ function JoinPage() {
       height: window.innerHeight,
     });
   };
+  const onCallback = () => {
+    console.log('awesome');
+  };
+  const [scrollY, setScrollY] = useState(0);
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY;
+    setScrollY(scrollPosition);
+  };
 
   useEffect(() => {
     window.addEventListener('resize', handleResize);
+    window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('resize', handleResize);
+      window.removeEventListener('scroll', handleScroll);
     };
   });
 
+  console.log('this is scrolly' + scrollY);
+  console.log('this is windowHeight' + windowSize.height);
+
   return (
     <Main>
-      <Title>"다가오는 WEB 3의 미래를 블록체인 밸리에서 함께 만들어갈 신입 node를 모집합니다!"</Title>
-      <div>
-        브라우저 화면 사이즈 : X {windowSize.width}, Y {windowSize.height}
-      </div>
-      <Middle>
-        - 블록체인에 대한 관심이 있고, NFT, Defi, DAO 등 블록체인이 가져올 미래에 대하여 호기심이 있는 사람
-      </Middle>
-      <Middle>- 1년 동안 블록체인밸리 활동에 집중할 수 있는 사람</Middle>
-      <Middle>- 매주 화, 목요일에 안암에서 19:30분부터 3시간 동안 진행되는 정규 세션에 참여 가능한 사람</Middle>
-      <Middle>
-        - develop team의 경우, 하나 이상의 프로그래밍 언어 (예: C, C++, Java, Python, Javascript 등) 학습 경험이 있는
-        분의 지원을 권장합니다.
-      </Middle>
-      <NotNowTop>지금은 지원 기간이 아닙니다</NotNowTop>
-      <NotNow>지원 기간에 업로드될 공지를 확인해주세요</NotNow>
+      <PageBox height={windowSize.height - 100} paddingBottom={0}>
+        <Title>다가오는 WEB 3의 미래를 블록체인 밸리에서</Title>
+        <Title>함께 만들어갈 신입 node를 모집합니다!</Title>
+        <Lottie animationData={animationData} style={{ width: '150px', marginTop: '130px' }} />
+      </PageBox>
+      <TimeLineDiv>
+        <TimelineObserver
+          initialColor="#e5e5e5"
+          fillColor="#4350AF"
+          handleObserve={setObserver => <JoinDeatil callback={onCallback} setObserver={setObserver} />}
+        />
+      </TimeLineDiv>
+      <PageBox height={windowSize.height - 100} paddingBottom={100}>
+        <NotNowTop>지금은 지원 기간이 아닙니다</NotNowTop>
+        <NotNow>지원 기간에 업로드될 공지를 확인해주세요</NotNow>
+      </PageBox>
     </Main>
   );
 }

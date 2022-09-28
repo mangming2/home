@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
+import './fonts.css';
 
 const GlobalStyles = createGlobalStyle`
   ${reset}
@@ -25,8 +26,7 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     border: 0;
     font-size: 100%;
-    font-family: 'Noto Sans', sans-serif;
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Pretendard';
     box-sizing: border-box;
     vertical-align: baseline;
 }
@@ -44,6 +44,7 @@ const GlobalStyles = createGlobalStyle`
   }
   body {
     line-height: 1;
+    font-family: 'Pretendard';
   }
   ol, ul {
     list-style: none;

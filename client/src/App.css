@@ -43,3 +43,25 @@
   transition: opacity 800ms transform 800ms;
   transform: translateY(3%);
 }
+
+.moveR-enter {
+  opacity: 0;
+  transform: translateX(50%);
+}
+
+.moveR-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 400ms, transform 400ms;
+}
+
+.moveL-enter {
+  opacity: 0;
+  transform: translateX(-50%);
+}
+
+.moveL-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 400ms, transform 400ms;
+}

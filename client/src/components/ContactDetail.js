@@ -74,7 +74,7 @@ const FollowUsLogoLink = styled.a`
   transition: all 0.2s ease-in-out;
   &:hover {
     background: rgba(17, 53, 181, 0.57);
-    box-shadow: 0px 0px 35px 11px rgba(23, 74, 255, 0.4);
+    box-shadow: 0px 0px 35px 11px rgba(23, 74, 155, 0.4);
     border-radius: 14px;
     ${FollowUsLogoImg} {
       width: 45px;
