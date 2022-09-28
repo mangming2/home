@@ -8,6 +8,13 @@
     "commonjs": true,
     "es2022": true
   },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"]
+      }
+    }
+  },
   "globals": { "_": true },
   "plugins": ["import", "html"],
   "extends": ["airbnb-base", "prettier", "react-app"],
