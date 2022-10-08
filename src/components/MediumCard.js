@@ -46,6 +46,7 @@ function MediumCard() {
   const [info, setInfo] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy';
   const URL = '/feed/blockchain-valley';
 
   function parseStr(dataSet) {
@@ -87,7 +88,7 @@ function MediumCard() {
         setError(null);
         setInfo(null);
         setLoading(true);
-        const { data: dataSet } = await axios.get(URL);
+        const { data: dataSet } = await axios.get(`${PROXY}${URL}`);
         setInfo(parseStr(dataSet));
       } catch (e) {
         setError(e);
