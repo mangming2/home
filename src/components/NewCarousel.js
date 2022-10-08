@@ -3,7 +3,7 @@ import 'react-alice-carousel/lib/alice-carousel.css';
 import AliceCarousel from 'react-alice-carousel';
 
 const Contain = styled.div`
-  width: 100%;
+  width: 90%;
   display: flex;
   align-items: center;
   margin: 0 auto;
@@ -12,29 +12,27 @@ const Contain = styled.div`
 const NewCarousel = ({ children }) => {
   const responsive = {
     0: {
-      items: 2,
+      items: 1,
     },
     512: {
-      items: 4,
+      items: 3,
     },
     1024: {
-      items: 6,
+      items: 5,
     },
   };
-  const handleDragStart = e => e.preventDefault();
 
   return (
     <Contain>
       <AliceCarousel
         mouseTracking
-        infinite={4000}
-        animationDuration={4000}
+        infinite={true}
+        animationDuration={3000}
         disableDotsControls
         disableButtonsControls
         responsive={responsive}
         autoPlay
         items={children}
-        paddingRight={40}
       />
     </Contain>
   );

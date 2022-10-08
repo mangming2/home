@@ -7,7 +7,7 @@ import NewCarousel from './NewCarousel';
 
 const CardBox = styled.div`
   background-color: white;
-  width: 200px;
+  width: 230px;
   border-radius: 10px;
   margin-right: 60px;
   height: 290px;
