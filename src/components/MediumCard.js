@@ -2,7 +2,8 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import XMLParser from 'react-xml-parser';
 import styled from 'styled-components';
-import Carousel from './Carousel';
+import NewCarousel from './NewCarousel';
+// import Carousel from './Carousel';
 
 const CardBox = styled.div`
   background-color: white;
@@ -113,12 +114,9 @@ function MediumCard() {
       </Detail>
     </CardBox>
   ));
+
   if (info) {
-    return (
-      <>
-        <Carousel>{cards}</Carousel>
-      </>
-    );
+    return <NewCarousel>{cards}</NewCarousel>;
   }
 }
 
