@@ -8,106 +8,97 @@ import TelegramLogo from '../assets/telegram.svg';
 
 const StyledFooter = styled.footer`
   display: flex;
-  height: 300px;
+  height: 10rem;
   width: 100%;
-  background-color: #323956;
+  background-color: #171a24;
   color: #a5a5a5;
+  justify-content: center;
+  align-items: center;
 `;
 
 const FooterContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  width: 100%;
+  flex-direction: row;
   align-items: center;
-  flex: 1;
-  text-align: center;
+  justify-content: space-between;
+  padding: 0 11.7vw;
 `;
 
-const FooterTitle = styled.h3`
-  width: 378px;
-  font-weight: 500;
-  font-size: 32px;
-  line-height: 38px;
-`;
-
-const FooterLogo = styled.h2`
+const FooterLogo = styled.div`
   display: flex;
-  margin-top: 100px;
+  margin-bottom: 1rem;
 `;
 
-const ContactInfo = styled(FooterContainer)`
-  margin-top: 71px;
+const AddressLink = styled.a``;
+
+const Txt = styled.div`
+  font-size: 0.75rem;
+  line-height: 1.5rem;
 `;
-
-const ContactInfoTitle = styled(FooterTitle)``;
-
-const MailAddressLink = styled.a`
-  margin-top: 25px;
-  display: flex;
-`;
-
-const MailAddressTxt = styled.span`
-  font-weight: 510;
-  font-size: 20px;
-  line-height: 24px;
-`;
-
-const FollowUs = styled(FooterContainer)`
-  margin-top: 66.87px;
-`;
-
-const FollowUsTitle = styled(FooterTitle)``;
 
 const FollowUsLogos = styled.div`
   display: flex;
-  margin-top: 25px;
 `;
 
 const FollowUsLogoLink = styled.a`
   display: flex;
 
   & + & {
-    margin-left: 40px;
+    margin-left: 20px;
   }
 `;
 
 const FollowUsLogoImg = styled.img`
-  width: 50px;
-  height: 50px;
+  height: 1.2rem;
+`;
+
+const RightContainer = styled.div`
+  height: 6rem;
+`;
+
+const LeftContainer = styled(RightContainer)`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
 `;
 
 const Footer = () => (
   <StyledFooter>
     <FooterContainer>
-      <FooterLogo>
-        <img src={LogoGray} alt="블록체인 밸리"></img>
-      </FooterLogo>
+      <RightContainer>
+        <FooterLogo>
+          <img height={28} src={LogoGray} alt="블록체인밸리"></img>
+        </FooterLogo>
+        <AddressLink rel="noopener noreferrer" href="mailto: blockchainvalley.kor@gmail.com">
+          <Txt>blockchainvalley.kor@gmail.com</Txt>
+        </AddressLink>
+        <AddressLink rel="noopener noreferrer" href="http://kko.to/En-xxmhJh" target="_blank">
+          <Txt>서울특별시 성북구 고려대로 24길 56 4층 블록체인밸리</Txt>
+        </AddressLink>
+      </RightContainer>
+      <LeftContainer>
+        <FollowUsLogos>
+          <FollowUsLogoLink rel="noopener noreferrer" target="_blank" href="https://discord.gg/RFAWQz8S3J">
+            <FollowUsLogoImg src={DiscordLogo} alt="블록체인밸리 디스코드"></FollowUsLogoImg>
+          </FollowUsLogoLink>
+          <FollowUsLogoLink
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://www.instagram.com/blockchain__valley/">
+            <FollowUsLogoImg src={InstagramLogo} alt="블록체인밸리 인스타그램"></FollowUsLogoImg>
+          </FollowUsLogoLink>
+          <FollowUsLogoLink rel="noopener noreferrer" target="_blank" href="https://medium.com/blockchain-valley">
+            <FollowUsLogoImg src={MediumLogo} alt="블록체인밸리 미디엄"></FollowUsLogoImg>
+          </FollowUsLogoLink>
+          <FollowUsLogoLink rel="noopener noreferrer" target="_blank" href="https://telegram.org/">
+            <FollowUsLogoImg src={TelegramLogo} alt="블록체인밸리 텔레그램"></FollowUsLogoImg>
+          </FollowUsLogoLink>
+        </FollowUsLogos>
+        <Txt>Copyright Blockchain Valley. All rights reserved.</Txt>
+      </LeftContainer>
     </FooterContainer>
-    <ContactInfo>
-      <ContactInfoTitle>Contact</ContactInfoTitle>
-      <MailAddressLink href="mailto: blockchainvalley.kor@gmail.com">
-        <MailAddressTxt>blockchainvalley.kor@gmail.com</MailAddressTxt>
-      </MailAddressLink>
-    </ContactInfo>
-    <FollowUs>
-      <FollowUsTitle>Follow us</FollowUsTitle>
-      <FollowUsLogos>
-        <FollowUsLogoLink rel="noopener noreferrer" target="_blank" href="https://discord.gg/">
-          <FollowUsLogoImg src={DiscordLogo} alt="블록체인 밸리 디스코드"></FollowUsLogoImg>
-        </FollowUsLogoLink>
-        <FollowUsLogoLink
-          rel="noopener noreferrer"
-          target="_blank"
-          href="https://www.instagram.com/blockchain__valley/">
-          <FollowUsLogoImg src={InstagramLogo} alt="블록체인 밸리 인스타그램"></FollowUsLogoImg>
-        </FollowUsLogoLink>
-        <FollowUsLogoLink rel="noopener noreferrer" target="_blank" href="https://medium.com/">
-          <FollowUsLogoImg src={MediumLogo} alt="블록체인 밸리 미디엄"></FollowUsLogoImg>
-        </FollowUsLogoLink>
-        <FollowUsLogoLink rel="noopener noreferrer" target="_blank" href="https://telegram.org/">
-          <FollowUsLogoImg src={TelegramLogo} alt="블록체인 밸리 텔레그램"></FollowUsLogoImg>
-        </FollowUsLogoLink>
-      </FollowUsLogos>
-    </FollowUs>
   </StyledFooter>
 );
 
