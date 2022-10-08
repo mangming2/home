@@ -17,11 +17,6 @@ const CardBox = styled.div`
   }
 `;
 
-const AllCardBox = styled.div`
-  display: flex;
-  /* overflow: hidden; */
-`;
-
 const CardImg = styled.img`
   width: 100%;
   height: 65%;
