@@ -2,12 +2,13 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import XMLParser from 'react-xml-parser';
 import styled from 'styled-components';
+import Carousel from './Carousel';
 
 const CardBox = styled.div`
   background-color: white;
-  width: 230px;
+  width: 200px;
   border-radius: 10px;
-  margin: 10px;
+  margin-right: 60px;
   height: 290px;
   cursor: pointer;
   &:hover {
@@ -15,6 +16,12 @@ const CardBox = styled.div`
     box-shadow: 0px 0px 30px rgba(6, 61, 215, 0.8);
   }
 `;
+
+const AllCardBox = styled.div`
+  display: flex;
+  /* overflow: hidden; */
+`;
+
 const CardImg = styled.img`
   width: 100%;
   height: 65%;
@@ -46,7 +53,6 @@ function MediumCard() {
   const [info, setInfo] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy';
   const URL = '/feed/blockchain-valley';
 
   function parseStr(dataSet) {
@@ -88,7 +94,7 @@ function MediumCard() {
         setError(null);
         setInfo(null);
         setLoading(true);
-        const { data: dataSet } = await axios.get(`${PROXY}${URL}`);
+        const { data: dataSet } = await axios.get(URL);
         setInfo(parseStr(dataSet));
       } catch (e) {
         setError(e);
@@ -105,14 +111,18 @@ function MediumCard() {
     <CardBox key={index} onClick={() => window.open(oneInfo.url, '_blank')}>
       <CardImg src={oneInfo.img} alt="이미지 없음"></CardImg>
       <Detail>
-        <Title>{oneInfo.title.length < 17 ? oneInfo.title : `${oneInfo.title.slice(0, 16)}...`}</Title>
+        <Title>{oneInfo.title.length < 16 ? oneInfo.title : `${oneInfo.title.slice(0, 15)} ...`}</Title>
         <Author>{oneInfo.author}</Author>
         <Date>{oneInfo.published}</Date>
       </Detail>
     </CardBox>
   ));
   if (info) {
-    return <div>{cards}</div>;
+    return (
+      <>
+        <Carousel>{cards}</Carousel>
+      </>
+    );
   }
 }
 

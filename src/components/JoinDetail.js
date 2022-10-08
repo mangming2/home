@@ -71,22 +71,20 @@ const JoinDeatil = ({ setObserver, callback }) => {
   const circle5 = useRef(null);
 
   const someCallback1 = () => {
-    setMessage1(
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.sf'
-    );
+    setMessage1('블록체인의 진정한 가치 학습이라는 비전에 공감하는 사람');
     callback();
   };
   const someCallback2 = () => {
-    setMessage2('Egestas dui id ornare arcu odio ut sem nulla pharetra');
+    setMessage2('1년 동안 함께 지속적으로 성장하고자 하는 사람');
   };
   const someCallback3 = () => {
-    setMessage3('Porta non pulvinar neque laoreet suspendisse interdum consectetur libero. ');
+    setMessage3('매주 2번 3시간 씩 이루어지는 세션에 성실히 참여할 수 있는 사람');
   };
   const someCallback4 = () => {
-    setMessage4('Risus pretium quam vulputate dignissim suspendisse in est ante in. ');
+    setMessage4('실제로 가치가 있는 프로덕트를 만들고자 하는 개발팀');
   };
   const someCallback5 = () => {
-    setMessage5('Tincidunt tortor aliquam nulla facilisi cras fermentum odio. ');
+    setMessage5('자신만의 관점을 통해 블록체인을 분석하는 리서치팀');
   };
 
   useEffect(() => {

@@ -1,10 +1,10 @@
 import Main from '../components/Main';
-import RecentMedium from '../components/RecentMedium';
+import MediumCard from '../components/MediumCard';
 
 const HomePage = () => (
   <Main>
     <h2>Home page</h2>
-    <RecentMedium />
+    <MediumCard />
   </Main>
 );
 
