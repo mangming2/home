@@ -27,10 +27,10 @@ const NewCarousel = ({ children }) => {
       items: 4,
     },
   };
-  const padding = {
-    paddingLeft: 550,
-    paddingRight: 0,
-  };
+  // const padding = {
+  //   paddingLeft: 550,
+  //   paddingRight: 0,
+  // };
 
   return (
     <Contain>
