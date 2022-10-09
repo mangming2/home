@@ -1,9 +1,15 @@
+import styled from 'styled-components';
 import Main from '../components/Main';
 import MediumCard from '../components/MediumCard';
 
+const MainImg = styled.div`
+  background-color: black;
+  height: 100vh;
+`;
+
 const HomePage = () => (
   <Main>
-    <h2>Home page</h2>
+    <MainImg />
     <MediumCard />
   </Main>
 );

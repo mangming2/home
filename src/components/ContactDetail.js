@@ -12,7 +12,7 @@ const Box = styled.div`
   /* padding: 0vh 0vh 1vh 5vh; */
   /* margin-left: 15px;
   margin-top: 15px; */
-  width: 45vw;
+  width: 35vw;
 `;
 
 const FooterContainer = styled.div`
@@ -26,13 +26,13 @@ const FooterContainer = styled.div`
 const FooterTitle = styled.h3`
   width: 378px;
   font-weight: 600;
-  font-size: 1.7vw;
+  font-size: 2rem;
   line-height: 38px;
   margin-bottom: 20px;
 `;
 
 const Title = styled.p`
-  font-size: 4vw;
+  font-size: 3.2rem;
   font-weight: 700;
   margin: 0px 0px 20px 15px;
 `;
@@ -108,7 +108,7 @@ const DetailImg = styled.img`
 `;
 const DetailText = styled.p`
   font-weight: 300;
-  font-size: 1.25vw;
+  font-size: 1.5rem;
   display: inline;
 `;
 
@@ -125,7 +125,7 @@ function ContactDetail() {
           <ImgBox>
             <DetailImg src={Call} alt="icon"></DetailImg>
           </ImgBox>
-          <DetailText>010-1234-5678</DetailText>
+          <DetailText>010-8940-7209</DetailText>
         </DetailBox>
         <DetailBox>
           <ImgBox>
@@ -143,7 +143,7 @@ function ContactDetail() {
       <FollowUs>
         <FollowUsTitle>Follow us</FollowUsTitle>
         <FollowUsLogos>
-          <FollowUsLogoLink rel="noopener noreferrer" target="_blank" href="https://discord.gg/">
+          <FollowUsLogoLink rel="noopener noreferrer" target="_blank" href="https://discord.gg/RFAWQz8S3J">
             <FollowUsLogoImg src={Discord} alt="블록체인 밸리 디스코드"></FollowUsLogoImg>
           </FollowUsLogoLink>
           <FollowUsLogoLink
@@ -152,7 +152,7 @@ function ContactDetail() {
             href="https://www.instagram.com/blockchain__valley/">
             <FollowUsLogoImg src={Insta} alt="블록체인 밸리 인스타그램"></FollowUsLogoImg>
           </FollowUsLogoLink>
-          <FollowUsLogoLink rel="noopener noreferrer" target="_blank" href="https://medium.com/">
+          <FollowUsLogoLink rel="noopener noreferrer" target="_blank" href="https://medium.com/blockchain-valley">
             <FollowUsLogoImg src={Medium} alt="블록체인 밸리 미디엄"></FollowUsLogoImg>
           </FollowUsLogoLink>
           <FollowUsLogoLink rel="noopener noreferrer" target="_blank" href="https://telegram.org/">

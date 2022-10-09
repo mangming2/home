@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Inner = styled.main`
   margin-top: 108px;
-  /* height: 1000px; */
+  padding: 0, 11.7vw;
 `;
 
 const Main = ({ children }) => <Inner>{children}</Inner>;

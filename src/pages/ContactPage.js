@@ -6,7 +6,7 @@ import ContactDetail from '../components/ContactDetail';
 const ContactBox = styled.div`
   display: flex;
   justify-content: flex-start;
-  margin-left: 5vw;
+  padding: 1rem 11.7vw 0 11.7vw;
 `;
 
 const ContactPage = () => (

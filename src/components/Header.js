@@ -10,13 +10,14 @@ const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100px;
+  height: 6.25rem;
   background-color: #0b0811;
   z-index: 9900;
+  padding: 0 11.7vw 0 2vw;
 `;
 
 const Logo = styled.h1`
-  margin-left: 41.5px;
+  height: 2rem;
 `;
 
 const LogoLink = styled(Link)`
@@ -25,7 +26,6 @@ const LogoLink = styled(Link)`
 
 const Nav = styled.nav`
   height: 33px;
-  margin-right: 41.5px;
 `;
 
 const PageList = styled.ul`
@@ -36,8 +36,7 @@ const PageList = styled.ul`
 `;
 
 const PageItem = styled.li`
-  width: 110px;
-  margin-left: 15px;
+  margin-left: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -73,8 +72,8 @@ const PageLink = styled(NavLink)`
 `;
 
 const PageTxt = styled.span`
-  font-size: 20px;
-  letter-spacing: -3%;
+  font-size: 1.1rem;
+  /* letter-spacing: -3%; */
   vertical-align: center;
 `;
 
@@ -82,7 +81,7 @@ const Header = () => (
   <StyledHeader>
     <Logo>
       <LogoLink to="/">
-        <img src={LogoWhite} alt="블록체인 밸리" />
+        <img height={44} src={LogoWhite} alt="블록체인 밸리" />
       </LogoLink>
     </Logo>
     <Nav>
