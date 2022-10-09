@@ -15,9 +15,15 @@ const NewCarousel = ({ children }) => {
       items: 1,
     },
     512: {
+      items: 2,
+    },
+    800: {
       items: 3,
     },
     1024: {
+      items: 4,
+    },
+    1400: {
       items: 5,
     },
   };
