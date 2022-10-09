@@ -8,11 +8,8 @@ import Telegram from '../assets/telegram.svg';
 import Medium from '../assets/medium.svg';
 
 const Box = styled.div`
-  height: 100vh;
-  /* padding: 0vh 0vh 1vh 5vh; */
-  /* margin-left: 15px;
-  margin-top: 15px; */
-  width: 35vw;
+  width: 40vw;
+  /* height: 80vh; */
 `;
 
 const FooterContainer = styled.div`
@@ -26,29 +23,32 @@ const FooterContainer = styled.div`
 const FooterTitle = styled.h3`
   width: 378px;
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 1rem;
   line-height: 38px;
   margin-bottom: 20px;
 `;
 
 const Title = styled.p`
-  font-size: 3.2rem;
-  font-weight: 700;
-  margin: 0px 0px 20px 15px;
+  font-size: 2.5rem;
+  font-weight: 500;
+  /* margin: 0px 0px 20px 15px; */
 `;
 
 const Detail = styled.p`
   font-weight: 300;
-  font-size: 1.2vw;
-  margin: 20px;
-  line-height: 160%;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  line-height: 150%;
 `;
 
 const FollowUs = styled(FooterContainer)`
   /* margin-top: 3vh; */
 `;
 
-const FollowUsTitle = styled(FooterTitle)``;
+const FollowUsTitle = styled(FooterTitle)`
+  font-weight: 300;
+  font-size: 2rem;
+`;
 
 const FollowUsLogos = styled.div`
   display: flex;
@@ -56,8 +56,8 @@ const FollowUsLogos = styled.div`
 `;
 
 const FollowUsLogoImg = styled.img`
-  width: 35px;
-  height: 35px;
+  width: 2rem;
+  height: 2rem;
   transition: all 0.2s ease-in-out;
   &:hover {
     /* background: white; */
@@ -72,6 +72,7 @@ const FollowUsLogoLink = styled.a`
   border-radius: 10px;
   align-items: center;
   transition: all 0.2s ease-in-out;
+
   &:hover {
     background: rgba(17, 53, 181, 0.57);
     box-shadow: 0px 0px 35px 11px rgba(23, 74, 155, 0.4);
@@ -84,62 +85,77 @@ const FollowUsLogoLink = styled.a`
   }
 
   & + & {
-    margin-left: 30px;
+    margin-left: 1rem;
   }
 `;
 
 const ContactBox = styled.div`
-  height: 33vh;
-  margin: 20px 20px 20px 20px;
+  height: 10rem;
+  margin-top: 4rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  align-items: left;
+  justify-content: space-between;
 `;
+
 const DetailBox = styled.div`
   display: flex;
+  flex-direction: row;
   align-items: center;
+  justify-content: left;
 `;
+
 const ImgBox = styled.div`
-  width: 80px;
-  text-align: center;
+  width: 2rem;
+  text-align: left;
 `;
+
 const DetailImg = styled.img`
-  padding-right: 20px;
+  height: 1.2rem;
+  /* padding-right: 0.5rem; */
 `;
+
 const DetailText = styled.p`
+  max-width: 25vw;
   font-weight: 300;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   display: inline;
+`;
+
+const ContentsContainer = styled.div`
+  margin-bottom: 20vh;
 `;
 
 function ContactDetail() {
   return (
     <Box>
-      <Title>Contact us</Title>
-      <Detail>
-        Consectetur adipiscing elit. Sed pulvinar gravida. Vestibulum blandit facilisis eros, vel ullamcorper ligula
-        temporn hac. Eestibulum blandit facilisis eros, temporn facilisis eros, vel ullamcorper ligula temporn hac.
-      </Detail>
-      <ContactBox>
-        <DetailBox>
-          <ImgBox>
-            <DetailImg src={Call} alt="icon"></DetailImg>
-          </ImgBox>
-          <DetailText>010-8940-7209</DetailText>
-        </DetailBox>
-        <DetailBox>
-          <ImgBox>
-            <DetailImg src={Location} alt="icon"></DetailImg>
-          </ImgBox>
-          <DetailText>서울특별시 성북구 고려대로24길 56 4층</DetailText>
-        </DetailBox>
-        <DetailBox>
-          <ImgBox>
-            <DetailImg src={Mail} alt="icon"></DetailImg>
-          </ImgBox>
-          <DetailText>blockchainvalley.kor@gmail.com</DetailText>
-        </DetailBox>
-      </ContactBox>
+      <ContentsContainer>
+        <Title>Contact us</Title>
+        <Detail>
+          Consectetur adipiscing elit. Sed pulvinar gravida. Vestibulum blandit facilisis eros, vel ullamcorper ligula
+          temporn hac. Eestibulum blandit facilisis eros, temporn facilisis eros, vel ullamcorper ligula temporn hac.
+        </Detail>
+        <ContactBox>
+          <DetailBox>
+            <ImgBox>
+              <DetailImg src={Call} alt="icon"></DetailImg>
+            </ImgBox>
+            <DetailText>010-8940-7209</DetailText>
+          </DetailBox>
+          <DetailBox>
+            <ImgBox>
+              <DetailImg src={Location} alt="icon"></DetailImg>
+            </ImgBox>
+            <DetailText>서울특별시 성북구 고려대로24길 56 4층 블록체인밸리</DetailText>
+          </DetailBox>
+          <DetailBox>
+            <ImgBox>
+              <DetailImg src={Mail} alt="icon"></DetailImg>
+            </ImgBox>
+            <DetailText>blockchainvalley.kor@gmail.com</DetailText>
+          </DetailBox>
+        </ContactBox>
+      </ContentsContainer>
       <FollowUs>
         <FollowUsTitle>Follow us</FollowUsTitle>
         <FollowUsLogos>

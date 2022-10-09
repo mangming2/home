@@ -96,11 +96,11 @@ const Header = () => (
             <PageTxt>About Us</PageTxt>
           </PageLink>
         </PageItem>
-        <PageItem>
+        {/* <PageItem>
           <PageLink to="/log">
             <PageTxt>Log</PageTxt>
           </PageLink>
-        </PageItem>
+        </PageItem> */}
         <PageItem>
           <PageLink to="/contact">
             <PageTxt>Contact</PageTxt>

@@ -8,16 +8,16 @@ import Modal from './Modal';
 const FormBox = styled.div`
   background-color: #fafafa;
   border-radius: 7px;
-  width: 35vw;
+  width: 50vw;
   padding: 1vh 6vh 5vh 6vh;
   color: black;
   /* position: absolute;
   left: 60%;
   top: 15%; */
   /* transform: translate(-50%, -50%); */
-  height: 80vh;
+  height: 72vh;
   overflow: hidden;
-  margin-left: 8vw;
+  margin: 3.5rem 0 10vh 5vw;
 `;
 
 const TextBox = styled.textarea`
