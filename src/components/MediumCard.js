@@ -9,7 +9,7 @@ const CardBox = styled.div`
   background-color: white;
   width: 230px;
   border-radius: 10px;
-  margin-right: 60px;
+  margin: 0 20px;
   height: 290px;
   cursor: pointer;
   &:hover {
