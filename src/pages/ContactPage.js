@@ -7,6 +7,7 @@ const ContactBox = styled.div`
   display: flex;
   justify-content: flex-start;
   padding: 1rem 11.7vw 0 11.7vw;
+  margin-top: 15vh;
 `;
 
 const ContactPage = () => (

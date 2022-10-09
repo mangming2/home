@@ -90,7 +90,7 @@ const FollowUsLogoLink = styled.a`
 `;
 
 const ContactBox = styled.div`
-  height: 10rem;
+  height: 7rem;
   margin-top: 4rem;
   display: flex;
   flex-direction: column;
