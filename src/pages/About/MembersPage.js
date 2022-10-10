@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { supabase } from '../../supabase';
 
@@ -13,6 +13,7 @@ const MembersPage = () => {
   // click event 있으면, 그 노드의 목록을 가져온다.
   // 컴포넌트 main -> sideNav + 목록
   const [selectedGeneration, setSelectedGenereation] = useState(1);
+  const [nodeData, setNodeData] = useState(-1);
 
   const generationClickHandler = event => {
     setSelectedGenereation(event.target.id);
@@ -38,6 +39,7 @@ const MembersPage = () => {
       }
 
       if (data) {
+        setNodeData(data);
         console.log(data);
       }
     } catch (error) {
@@ -47,23 +49,43 @@ const MembersPage = () => {
     }
   };
 
-  getNodeInfo(selectedGeneration, 'dev');
+  useEffect(() => {
+    getNodeInfo(selectedGeneration, 'dev');
+  }, []);
 
   return (
-    <section style={{ display: 'flex' }}>
-      <SideNav>
-        <NavList>
-          {generations.map(el => (
-            <NavItem
-              key={el}
-              id={el}
-              className={el === parseInt(selectedGeneration, 10) ? 'isActive' : ''}
-              onClick={generationClickHandler}>{`${el}기`}</NavItem>
+    <div>
+      {nodeData === -1 ? (
+        <div>데이터 불러오는 것을 실패했습니다!</div>
+      ) : (
+        <div>
+          <div>데이터 불러오기 성공</div>
+          {nodeData.map((node, idx) => (
+            <div key={idx}>
+              <div>{idx}</div>
+              <div>{node.name}</div>
+              <div>{node.role}</div>
+              <img width={300} src={node.image} alt={node.name} />
+            </div>
           ))}
-        </NavList>
-      </SideNav>
-      <MembersContainer></MembersContainer>
-    </section>
+        </div>
+      )}
+    </div>
+
+    // <section style={{ display: 'flex' }}>
+    //   <SideNav>
+    //     <NavList>
+    //       {generations.map(el => (
+    //         <NavItem
+    //           key={el}
+    //           id={el}
+    //           className={el === parseInt(selectedGeneration, 10) ? 'isActive' : ''}
+    //           onClick={generationClickHandler}>{`${el}기`}</NavItem>
+    //       ))}
+    //     </NavList>
+    //   </SideNav>
+    //   <MembersContainer></MembersContainer>
+    // </section>
   );
 };
 

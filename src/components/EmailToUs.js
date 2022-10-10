@@ -17,7 +17,7 @@ const FormBox = styled.div`
   /* transform: translate(-50%, -50%); */
   /* height: 68vh; */
   overflow: hidden;
-  margin: 3.5rem 0 10vh 5vw;
+  margin: 0 0 10vh 5vw;
 `;
 
 const TextBox = styled.textarea`
