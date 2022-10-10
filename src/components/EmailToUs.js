@@ -8,7 +8,7 @@ import Modal from './Modal';
 const FormBox = styled.div`
   background-color: #fafafa;
   border-radius: 7px;
-  width: 50vw;
+  width: 40vw;
   padding: 1vh 6vh 5vh 6vh;
   color: black;
   /* position: absolute;

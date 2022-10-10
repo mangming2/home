@@ -8,8 +8,10 @@ import Telegram from '../assets/telegram.svg';
 import Medium from '../assets/medium.svg';
 
 const Box = styled.div`
-  width: 40vw;
-  /* height: 80vh; */
+  width: 30vw;
+  margin: 0 5vw 10vh 0;
+  display: flex;
+  flex-direction: column;
 `;
 
 const FooterContainer = styled.div`
@@ -17,16 +19,16 @@ const FooterContainer = styled.div`
   flex-direction: column;
   align-items: center;
   flex: 1;
-  text-align: center;
+  /* text-align: center; */
 `;
 
-const FooterTitle = styled.h3`
-  width: 378px;
-  font-weight: 600;
-  font-size: 1rem;
-  line-height: 38px;
-  margin-bottom: 20px;
-`;
+// const FooterTitle = styled.h3`
+//   /* width: 378px; */
+//   font-weight: 600;
+//   font-size: 1rem;
+//   line-height: 38px;
+//   margin-bottom: 20px;
+// `;
 
 const Title = styled.p`
   font-size: 2.5rem;
@@ -42,17 +44,17 @@ const Detail = styled.p`
 `;
 
 const FollowUs = styled(FooterContainer)`
-  /* margin-top: 3vh; */
+  margin-top: 15vh;
 `;
 
-const FollowUsTitle = styled(FooterTitle)`
-  font-weight: 300;
-  font-size: 2rem;
-`;
+// const FollowUsTitle = styled(FooterTitle)`
+//   font-weight: 300;
+//   font-size: 2rem;
+// `;
 
 const FollowUsLogos = styled.div`
   display: flex;
-  margin-top: 10px;
+  /* margin-top: 10px; */
 `;
 
 const FollowUsLogoImg = styled.img`
@@ -85,13 +87,13 @@ const FollowUsLogoLink = styled.a`
   }
 
   & + & {
-    margin-left: 1rem;
+    margin-left: 0.3vw;
   }
 `;
 
 const ContactBox = styled.div`
-  height: 7rem;
-  margin-top: 4rem;
+  height: 8rem;
+  margin-top: 10vh;
   display: flex;
   flex-direction: column;
   align-items: left;
@@ -122,8 +124,16 @@ const DetailText = styled.p`
   display: inline;
 `;
 
+const DetailTextLink = styled.a`
+  max-width: 25vw;
+  font-weight: 300;
+  font-size: 1.2rem;
+  display: inline;
+  line-height: 150%;
+`;
+
 const ContentsContainer = styled.div`
-  margin-bottom: 20vh;
+  /* margin-bottom: 7vh; */
 `;
 
 function ContactDetail() {
@@ -132,8 +142,8 @@ function ContactDetail() {
       <ContentsContainer>
         <Title>Contact us</Title>
         <Detail>
-          Consectetur adipiscing elit. Sed pulvinar gravida. Vestibulum blandit facilisis eros, vel ullamcorper ligula
-          temporn hac. Eestibulum blandit facilisis eros, temporn facilisis eros, vel ullamcorper ligula temporn hac.
+          WEB3의 진정한 가치를 학습하는 공간 블록체인밸리입니다.
+          <br /> 블록체인밸리와의 파트너십 및 협력 혹은 요청 사항이 있으시다면 언제든지 편하게 연락주세요.
         </Detail>
         <ContactBox>
           <DetailBox>
@@ -146,18 +156,22 @@ function ContactDetail() {
             <ImgBox>
               <DetailImg src={Location} alt="icon"></DetailImg>
             </ImgBox>
-            <DetailText>서울특별시 성북구 고려대로24길 56 4층 블록체인밸리</DetailText>
+            <DetailTextLink rel="noopener noreferrer" href="http://kko.to/En-xxmhJh" target="_blank">
+              서울특별시 성북구 고려대로24길 56 4층
+            </DetailTextLink>
           </DetailBox>
           <DetailBox>
             <ImgBox>
               <DetailImg src={Mail} alt="icon"></DetailImg>
             </ImgBox>
-            <DetailText>blockchainvalley.kor@gmail.com</DetailText>
+            <DetailTextLink rel="noopener noreferrer" href="mailto: blockchainvalley.kor@gmail.com">
+              blockchainvalley.kor@gmail.com
+            </DetailTextLink>
           </DetailBox>
         </ContactBox>
       </ContentsContainer>
       <FollowUs>
-        <FollowUsTitle>Follow us</FollowUsTitle>
+        {/* <FollowUsTitle>Follow us</FollowUsTitle> */}
         <FollowUsLogos>
           <FollowUsLogoLink rel="noopener noreferrer" target="_blank" href="https://discord.gg/RFAWQz8S3J">
             <FollowUsLogoImg src={Discord} alt="블록체인 밸리 디스코드"></FollowUsLogoImg>
