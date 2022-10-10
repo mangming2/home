@@ -70,22 +70,22 @@ const MembersPage = () => {
           ))}
         </div>
       )}
-    </div>
 
-    // <section style={{ display: 'flex' }}>
-    //   <SideNav>
-    //     <NavList>
-    //       {generations.map(el => (
-    //         <NavItem
-    //           key={el}
-    //           id={el}
-    //           className={el === parseInt(selectedGeneration, 10) ? 'isActive' : ''}
-    //           onClick={generationClickHandler}>{`${el}기`}</NavItem>
-    //       ))}
-    //     </NavList>
-    //   </SideNav>
-    //   <MembersContainer></MembersContainer>
-    // </section>
+      <section style={{ display: 'flex' }}>
+        <SideNav>
+          <NavList>
+            {generations.map(el => (
+              <NavItem
+                key={el}
+                id={el}
+                className={el === parseInt(selectedGeneration, 10) ? 'isActive' : ''}
+                onClick={generationClickHandler}>{`${el}기`}</NavItem>
+            ))}
+          </NavList>
+        </SideNav>
+        <MembersContainer></MembersContainer>
+      </section>
+    </div>
   );
 };
 
