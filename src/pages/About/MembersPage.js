@@ -12,7 +12,7 @@ const MembersPage = () => {
   // 리스트 넣고, id값으로 관리
   // click event 있으면, 그 노드의 목록을 가져온다.
   // 컴포넌트 main -> sideNav + 목록
-  const [selectedGeneration, setSelectedGenereation] = useState(1);
+  const [selectedGeneration, setSelectedGenereation] = useState('1');
   const [nodeData, setNodeData] = useState(-1);
 
   const generationClickHandler = event => {
