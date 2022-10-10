@@ -92,7 +92,7 @@ const MembersPage = () => {
 };
 
 const Container = styled.div`
-  margin-top: 5vh;
+  margin: 5vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
