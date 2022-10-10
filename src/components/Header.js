@@ -1,6 +1,6 @@
 import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import LogoWhite from '../assets/logo_white.svg';
+import LogoWhite from '../assets/bv_logo_white.png';
 
 const StyledHeader = styled.header`
   position: fixed;
@@ -13,7 +13,7 @@ const StyledHeader = styled.header`
   height: 6.25rem;
   background-color: #0b0811;
   z-index: 9900;
-  padding: 0 11.7vw 0 2vw;
+  padding: 0 11.7vw 0 11.7vw;
 `;
 
 const Logo = styled.h1`

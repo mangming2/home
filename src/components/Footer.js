@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import LogoGray from '../assets/logo_gray.svg';
+import LogoGray from '../assets/bv_logo_gray.png';
 import DiscordLogo from '../assets/discord.svg';
 import InstagramLogo from '../assets/instagram.svg';
 import MediumLogo from '../assets/medium.svg';
