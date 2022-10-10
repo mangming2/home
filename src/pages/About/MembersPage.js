@@ -19,6 +19,16 @@ const MembersPage = () => {
     setSelectedGenereation(event.target.id);
   };
 
+  const loadData = () => {
+    console.log(selectedGeneration);
+    if (selectedGeneration === '1') {
+      setNodeData(testData);
+    }
+    if (selectedGeneration === '2') {
+      setNodeData(testData2);
+    }
+  };
+
   // const getNodeInfo = async (generation, role) => {
   //   try {
   //     const { data, error, status } = await supabase
@@ -50,9 +60,8 @@ const MembersPage = () => {
   // };
 
   useEffect(() => {
-    // getNodeInfo(selectedGeneration, 'dev');
-    setNodeData(testData);
-  }, []);
+    loadData();
+  }, [selectedGeneration]);
 
   return (
     <Container>
@@ -62,7 +71,9 @@ const MembersPage = () => {
             key={el}
             id={el}
             className={el === parseInt(selectedGeneration, 10) ? 'isActive' : ''}
-            onClick={generationClickHandler}>{`${el}th`}</NavItem>
+            onClick={generationClickHandler}>
+            {`${el}th`}
+          </NavItem>
         ))}
       </NavList>
 
@@ -78,7 +89,6 @@ const MembersPage = () => {
                 <InfoTxt>
                   {node.generation}th | {node.role === 'dev' ? '개발팀' : '리서치팀'}
                 </InfoTxt>
-                {/* <InfoTxt>{node.role}</InfoTxt> */}
               </NameContainer>
               <ContactlTxt>jinseongbe@gmail.com</ContactlTxt>
               <ContactlTxt>github</ContactlTxt>
@@ -112,8 +122,8 @@ const Card = styled.div`
   width: 300px;
   height: 478px;
   margin: 2rem;
-  background-color: #2e3453;
-  box-shadow: 0px 0px 35px 11px rgba(23, 74, 155, 0.4);
+  background-color: #1c2033;
+  box-shadow: 0px 0px 35px 11px rgba(23, 74, 155, 0.3);
   border-radius: 44px;
   display: flex;
   flex-direction: column;
@@ -222,6 +232,153 @@ const testData = [
     image:
       'https://rnningjigplqydivritt.supabase.co/storage/v1/object/sign/bucket1/node_images/IMG_9552.JPG?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJidWNrZXQxL25vZGVfaW1hZ2VzL0lNR185NTUyLkpQRyIsImlhdCI6MTY2NTI0MTMzNCwiZXhwIjoxOTgwNjAxMzM0fQ.ythLwOQYFLSAx81_eXylI4e4vRHY3CW1YkjAg9IZ3H0',
   },
+  {
+    node_id: 20220101,
+    name: '오민석',
+    generation: 1,
+    role: 'dev',
+    image:
+      'https://rnningjigplqydivritt.supabase.co/storage/v1/object/sign/bucket1/node_images/IMG_9553.JPG?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJidWNrZXQxL25vZGVfaW1hZ2VzL0lNR185NTUzLkpQRyIsImlhdCI6MTY2NTI0MTMzNiwiZXhwIjoxOTgwNjAxMzM2fQ.G7kyW4dIek_cdWHq6HWsdt3ZHE5Ql_fY7XvGIy672mk',
+  },
+  {
+    node_id: 20220103,
+    name: '한국일',
+    generation: 1,
+    role: 'dev',
+    image:
+      'https://rnningjigplqydivritt.supabase.co/storage/v1/object/sign/bucket1/node_images/IMG_9554.JPG?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJidWNrZXQxL25vZGVfaW1hZ2VzL0lNR185NTU0LkpQRyIsImlhdCI6MTY2NTI0MTY2NCwiZXhwIjoxOTgwNjAxNjY0fQ.ezJHzz5G8CP61jtCwgB2kghxXj2HveIs_4f2DNXcESk',
+  },
+  {
+    node_id: 20220102,
+    name: '권규리',
+    generation: 1,
+    role: 'dev',
+    image:
+      'https://rnningjigplqydivritt.supabase.co/storage/v1/object/sign/bucket1/node_images/IMG_9551.JPG?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJidWNrZXQxL25vZGVfaW1hZ2VzL0lNR185NTUxLkpQRyIsImlhdCI6MTY2NTI0MDg5NiwiZXhwIjoxOTgwNjAwODk2fQ.574TeQ6kGRFuRRgb5pNgZX8o6Y3GiaKKA2hapS4QJtA',
+  },
+  {
+    node_id: 20220104,
+    name: '박진성',
+    generation: 1,
+    role: 'dev',
+    image:
+      'https://rnningjigplqydivritt.supabase.co/storage/v1/object/sign/bucket1/node_images/IMG_9552.JPG?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJidWNrZXQxL25vZGVfaW1hZ2VzL0lNR185NTUyLkpQRyIsImlhdCI6MTY2NTI0MTMzNCwiZXhwIjoxOTgwNjAxMzM0fQ.ythLwOQYFLSAx81_eXylI4e4vRHY3CW1YkjAg9IZ3H0',
+  },
+  {
+    node_id: 20220101,
+    name: '오민석',
+    generation: 1,
+    role: 'dev',
+    image:
+      'https://rnningjigplqydivritt.supabase.co/storage/v1/object/sign/bucket1/node_images/IMG_9553.JPG?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJidWNrZXQxL25vZGVfaW1hZ2VzL0lNR185NTUzLkpQRyIsImlhdCI6MTY2NTI0MTMzNiwiZXhwIjoxOTgwNjAxMzM2fQ.G7kyW4dIek_cdWHq6HWsdt3ZHE5Ql_fY7XvGIy672mk',
+  },
+  {
+    node_id: 20220103,
+    name: '한국일',
+    generation: 1,
+    role: 'dev',
+    image:
+      'https://rnningjigplqydivritt.supabase.co/storage/v1/object/sign/bucket1/node_images/IMG_9554.JPG?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJidWNrZXQxL25vZGVfaW1hZ2VzL0lNR185NTU0LkpQRyIsImlhdCI6MTY2NTI0MTY2NCwiZXhwIjoxOTgwNjAxNjY0fQ.ezJHzz5G8CP61jtCwgB2kghxXj2HveIs_4f2DNXcESk',
+  },
+  {
+    node_id: 20220102,
+    name: '권규리',
+    generation: 1,
+    role: 'dev',
+    image:
+      'https://rnningjigplqydivritt.supabase.co/storage/v1/object/sign/bucket1/node_images/IMG_9551.JPG?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJidWNrZXQxL25vZGVfaW1hZ2VzL0lNR185NTUxLkpQRyIsImlhdCI6MTY2NTI0MDg5NiwiZXhwIjoxOTgwNjAwODk2fQ.574TeQ6kGRFuRRgb5pNgZX8o6Y3GiaKKA2hapS4QJtA',
+  },
+  {
+    node_id: 20220104,
+    name: '박진성',
+    generation: 1,
+    role: 'dev',
+    image:
+      'https://rnningjigplqydivritt.supabase.co/storage/v1/object/sign/bucket1/node_images/IMG_9552.JPG?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJidWNrZXQxL25vZGVfaW1hZ2VzL0lNR185NTUyLkpQRyIsImlhdCI6MTY2NTI0MTMzNCwiZXhwIjoxOTgwNjAxMzM0fQ.ythLwOQYFLSAx81_eXylI4e4vRHY3CW1YkjAg9IZ3H0',
+  },
+  {
+    node_id: 20220101,
+    name: '오민석',
+    generation: 1,
+    role: 'dev',
+    image:
+      'https://rnningjigplqydivritt.supabase.co/storage/v1/object/sign/bucket1/node_images/IMG_9553.JPG?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJidWNrZXQxL25vZGVfaW1hZ2VzL0lNR185NTUzLkpQRyIsImlhdCI6MTY2NTI0MTMzNiwiZXhwIjoxOTgwNjAxMzM2fQ.G7kyW4dIek_cdWHq6HWsdt3ZHE5Ql_fY7XvGIy672mk',
+  },
+  {
+    node_id: 20220103,
+    name: '한국일',
+    generation: 1,
+    role: 'dev',
+    image:
+      'https://rnningjigplqydivritt.supabase.co/storage/v1/object/sign/bucket1/node_images/IMG_9554.JPG?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJidWNrZXQxL25vZGVfaW1hZ2VzL0lNR185NTU0LkpQRyIsImlhdCI6MTY2NTI0MTY2NCwiZXhwIjoxOTgwNjAxNjY0fQ.ezJHzz5G8CP61jtCwgB2kghxXj2HveIs_4f2DNXcESk',
+  },
+  {
+    node_id: 20220102,
+    name: '권규리',
+    generation: 1,
+    role: 'dev',
+    image:
+      'https://rnningjigplqydivritt.supabase.co/storage/v1/object/sign/bucket1/node_images/IMG_9551.JPG?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJidWNrZXQxL25vZGVfaW1hZ2VzL0lNR185NTUxLkpQRyIsImlhdCI6MTY2NTI0MDg5NiwiZXhwIjoxOTgwNjAwODk2fQ.574TeQ6kGRFuRRgb5pNgZX8o6Y3GiaKKA2hapS4QJtA',
+  },
+  {
+    node_id: 20220104,
+    name: '박진성',
+    generation: 1,
+    role: 'dev',
+    image:
+      'https://rnningjigplqydivritt.supabase.co/storage/v1/object/sign/bucket1/node_images/IMG_9552.JPG?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJidWNrZXQxL25vZGVfaW1hZ2VzL0lNR185NTUyLkpQRyIsImlhdCI6MTY2NTI0MTMzNCwiZXhwIjoxOTgwNjAxMzM0fQ.ythLwOQYFLSAx81_eXylI4e4vRHY3CW1YkjAg9IZ3H0',
+  },
+  {
+    node_id: 20220101,
+    name: '오민석',
+    generation: 1,
+    role: 'dev',
+    image:
+      'https://rnningjigplqydivritt.supabase.co/storage/v1/object/sign/bucket1/node_images/IMG_9553.JPG?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJidWNrZXQxL25vZGVfaW1hZ2VzL0lNR185NTUzLkpQRyIsImlhdCI6MTY2NTI0MTMzNiwiZXhwIjoxOTgwNjAxMzM2fQ.G7kyW4dIek_cdWHq6HWsdt3ZHE5Ql_fY7XvGIy672mk',
+  },
+  {
+    node_id: 20220103,
+    name: '한국일',
+    generation: 1,
+    role: 'dev',
+    image:
+      'https://rnningjigplqydivritt.supabase.co/storage/v1/object/sign/bucket1/node_images/IMG_9554.JPG?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJidWNrZXQxL25vZGVfaW1hZ2VzL0lNR185NTU0LkpQRyIsImlhdCI6MTY2NTI0MTY2NCwiZXhwIjoxOTgwNjAxNjY0fQ.ezJHzz5G8CP61jtCwgB2kghxXj2HveIs_4f2DNXcESk',
+  },
+  {
+    node_id: 20220102,
+    name: '권규리',
+    generation: 1,
+    role: 'dev',
+    image:
+      'https://rnningjigplqydivritt.supabase.co/storage/v1/object/sign/bucket1/node_images/IMG_9551.JPG?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJidWNrZXQxL25vZGVfaW1hZ2VzL0lNR185NTUxLkpQRyIsImlhdCI6MTY2NTI0MDg5NiwiZXhwIjoxOTgwNjAwODk2fQ.574TeQ6kGRFuRRgb5pNgZX8o6Y3GiaKKA2hapS4QJtA',
+  },
+  {
+    node_id: 20220104,
+    name: '박진성',
+    generation: 1,
+    role: 'dev',
+    image:
+      'https://rnningjigplqydivritt.supabase.co/storage/v1/object/sign/bucket1/node_images/IMG_9552.JPG?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJidWNrZXQxL25vZGVfaW1hZ2VzL0lNR185NTUyLkpQRyIsImlhdCI6MTY2NTI0MTMzNCwiZXhwIjoxOTgwNjAxMzM0fQ.ythLwOQYFLSAx81_eXylI4e4vRHY3CW1YkjAg9IZ3H0',
+  },
+  {
+    node_id: 20220101,
+    name: '오민석',
+    generation: 1,
+    role: 'dev',
+    image:
+      'https://rnningjigplqydivritt.supabase.co/storage/v1/object/sign/bucket1/node_images/IMG_9553.JPG?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJidWNrZXQxL25vZGVfaW1hZ2VzL0lNR185NTUzLkpQRyIsImlhdCI6MTY2NTI0MTMzNiwiZXhwIjoxOTgwNjAxMzM2fQ.G7kyW4dIek_cdWHq6HWsdt3ZHE5Ql_fY7XvGIy672mk',
+  },
+  {
+    node_id: 20220103,
+    name: '한국일',
+    generation: 1,
+    role: 'dev',
+    image:
+      'https://rnningjigplqydivritt.supabase.co/storage/v1/object/sign/bucket1/node_images/IMG_9554.JPG?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJidWNrZXQxL25vZGVfaW1hZ2VzL0lNR185NTU0LkpQRyIsImlhdCI6MTY2NTI0MTY2NCwiZXhwIjoxOTgwNjAxNjY0fQ.ezJHzz5G8CP61jtCwgB2kghxXj2HveIs_4f2DNXcESk',
+  },
+];
+
+const testData2 = [
   {
     node_id: 20220101,
     name: '오민석',
