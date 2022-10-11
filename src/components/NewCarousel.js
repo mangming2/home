@@ -26,25 +26,20 @@ const NewCarousel = ({ children }) => {
       items: 4,
     },
   };
-  // const padding = {
-  //   paddingLeft: 550,
-  //   paddingRight: 0,
-  // };
 
   return (
     <Contain>
       <AliceCarousel
         mouseTracking
         infinite={true}
-        // animationDuration={2000}
-        // autoPlayInterval={3000}
+        animationDuration={2000}
+        autoPlayInterval={2500}
         disableDotsControls
         disableButtonsControls
         responsive={responsive}
-        // autoPlay
+        autoPlay
         items={children}
         fadeOutAnimation={true}
-        // paddingLeft={50}
       />
     </Contain>
   );
