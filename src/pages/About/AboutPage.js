@@ -7,6 +7,7 @@ import SessionPage from './SessionPage';
 import MembersPage from './MembersPage';
 
 const MainInner = styled.div`
+  padding-top: 3rem;
   display: flex;
   flex-direction: column;
   width: 100vw;
@@ -14,7 +15,7 @@ const MainInner = styled.div`
 
 const Tablist = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
   align-items: center;
   padding: 30px;
   width: 80%;
@@ -39,21 +40,27 @@ const Tab = styled.div`
     right: 0;
     background-color: #8091d8;
   }
+  & + & {
+    margin-left: 4rem;
+  }
 `;
 
 const TabTxt = styled.span`
   font-weight: 800;
-  font-size: 40px;
+  font-size: 2.3rem;
   line-height: 48px;
   text-align: center;
   letter-spacing: -0.03em;
-  color: #ffffff;
-  text-shadow: -1px 0px rgba(0, 49, 187, 0.65), 0px 1px rgba(0, 49, 187, 0.65), 1px 0px rgba(0, 49, 187, 0.65),
-    0px -1px rgba(0, 49, 187, 0.65), 0px 4px 34px rgba(61, 87, 160, 0.85);
+  color: rgba(255, 255, 255, 0.6);
 
   &::after {
     display: ${props => (props['aria-selected'] ? 'inline-block' : 'none')};
     color: rgba(255, 255, 255, 0.6);
+  }
+
+  &.isActive {
+    color: #ffffff;
+    text-shadow: 0px 8px 43px rgba(19, 72, 224, 0.75);
   }
 `;
 
@@ -81,13 +88,13 @@ const AboutPage = () => {
       <MainInner>
         <Tablist onClick={tabClickHandler} role="tablist">
           <Tab id="DETAIL" role="tab" aria-selected={innerPage === 'DETAIL'}>
-            <TabTxt>Detail</TabTxt>
+            <TabTxt className={innerPage === 'DETAIL' ? 'isActive' : ''}>Detail</TabTxt>
           </Tab>
           <Tab id="SESSION" role="tab" aria-selected={innerPage === 'SESSION'}>
-            <TabTxt>Session</TabTxt>
+            <TabTxt className={innerPage === 'SESSION' ? 'isActive' : ''}>Session</TabTxt>
           </Tab>
           <Tab id="MEMBERS" role="tab" aria-selected={innerPage === 'MEMBERS'}>
-            <TabTxt>Members</TabTxt>
+            <TabTxt className={innerPage === 'MEMBERS' ? 'isActive' : ''}>Members</TabTxt>
           </Tab>
         </Tablist>
         {content}

@@ -74,19 +74,20 @@ const MembersPage = () => {
 };
 
 const Container = styled.div`
-  margin: 5vh;
+  margin: 0 11.7vw;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: left;
+  align-items: left;
 `;
 
 const MembersContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
+  margin: 0 -2rem;
 `;
 
 const Card = styled.div`
@@ -155,16 +156,16 @@ const Loading = styled.div`
 `;
 
 const NavList = styled.ul`
-  margin-top: 5vh;
+  margin-top: 2rem;
   height: 6rem;
-  width: 50vw;
+  /* width: 50vw; */
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: left;
 `;
 
 const NavItem = styled.li`
-  font-size: 3rem;
+  font-size: 2.2rem;
   font-weight: 500;
   cursor: pointer;
   height: 3rem;
