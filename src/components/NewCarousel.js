@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import AliceCarousel from 'react-alice-carousel';
-import './carousel.css';
 
 const Contain = styled.div`
   display: flex;
