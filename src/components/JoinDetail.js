@@ -10,7 +10,7 @@ const Wrapper = styled.div`
 `;
 
 const Timeline = styled.div`
-  height: 300px;
+  height: 70vh;
   width: 3px;
   box-shadow: 0px 0px 24px 2px rgba(23, 74, 255, 0.36);
 `;

@@ -1,13 +1,11 @@
 import styled from 'styled-components';
 import Slider from 'react-slick';
-
-import arrowRight from '../../assets/arrow-right.svg';
-import arrowLeft from '../../assets/arrow-left.svg';
 import lounge1 from '../../assets/images/lounge1.jpeg';
 import lounge2 from '../../assets/images/lounge2.jpeg';
 import lounge3 from '../../assets/images/lounge3.jpeg';
 import lounge4 from '../../assets/images/lounge4.jpeg';
 import lounge5 from '../../assets/images/lounge5.jpeg';
+import DetailPageCarousel from '../../components/DetailCarousel';
 
 const MainTitle = styled.h2`
   margin-top: 100px;
@@ -54,9 +52,8 @@ const ImgContainer = styled.div`
 `;
 
 const LoungeImg = styled.img`
-  width: 355px;
-  height: 233px;
-  border-radius: 5px;
+  width: 20vw;
+  /* border-radius: 5px; */
 `;
 
 const StyledSlider = styled(Slider)`
@@ -111,65 +108,29 @@ const StyledSlider = styled(Slider)`
   }
 `;
 
-const Arrow = props => {
-  const { className, style, onClick, isRight } = props;
-  return (
-    <div
-      className={className}
-      style={{
-        ...style,
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        position: 'absolute',
-        zIndex: 1,
-        border: '2px solid #fff',
-        borderRadius: '50%',
-        padding: isRight ? '2px 0 0 3px' : '4px',
-        paddingLeft: '3px',
-        paddingTop: '2px',
-      }}
-      onClick={onClick}>
-      <img src={isRight ? arrowRight : arrowLeft} alt={isRight ? '다음' : '이전'} style={{ width: '15px' }} />
-    </div>
-  );
-};
-
-const sliderSettings = {
-  dots: false,
-  infinite: false,
-  speed: 300,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  variableWidth: true,
-  nextArrow: <Arrow isRight={true} />,
-  prevArrow: <Arrow isRight={false} />,
-  responsive: [
-    {
-      breakpoint: 1024,
-      sliderSettings: {
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        infinite: false,
-        dots: false,
-      },
-    },
-    {
-      breakpoint: 600,
-      sliderSettings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
-      },
-    },
-    {
-      breakpoint: 480,
-      sliderSettings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-      },
-    },
-  ],
-};
+// const Arrow = props => {
+//   const { className, style, onClick, isRight } = props;
+//   return (
+//     <div
+//       className={className}
+//       style={{
+//         ...style,
+//         display: 'flex',
+//         justifyContent: 'center',
+//         alignItems: 'center',
+//         position: 'absolute',
+//         zIndex: 1,
+//         border: '2px solid #fff',
+//         borderRadius: '50%',
+//         padding: isRight ? '2px 0 0 3px' : '4px',
+//         paddingLeft: '3px',
+//         paddingTop: '2px',
+//       }}
+//       onClick={onClick}>
+//       <img src={isRight ? arrowRight : arrowLeft} alt={isRight ? '다음' : '이전'} style={{ width: '15px' }} />
+//     </div>
+//   );
+// };
 
 const DetailPage = () => (
   <>
@@ -184,26 +145,14 @@ const DetailPage = () => (
         나이, 소속, 출신에 제한 없이 누구나 함께 할 수 있습니다.
       </DetailItem>
     </DetailContainer>
-    <Subtitle>학회 라운지</Subtitle>
-    <SliderContainer>
-      <StyledSlider {...sliderSettings}>
-        <ImgContainer>
-          <LoungeImg src={lounge1} alt="학회 라운지 이미지" />
-        </ImgContainer>
-        <ImgContainer>
-          <LoungeImg src={lounge2} alt="학회 라운지 이미지" />
-        </ImgContainer>
-        <ImgContainer>
-          <LoungeImg src={lounge3} alt="학회 라운지 이미지" />
-        </ImgContainer>
-        <ImgContainer>
-          <LoungeImg src={lounge4} alt="학회 라운지 이미지" />
-        </ImgContainer>
-        <ImgContainer>
-          <LoungeImg src={lounge5} alt="학회 라운지 이미지" />
-        </ImgContainer>
-      </StyledSlider>
-    </SliderContainer>
+    <Subtitle>Lounge</Subtitle>
+    <DetailPageCarousel>
+      <LoungeImg src={lounge1} alt="학회 라운지 이미지" />
+      <LoungeImg src={lounge2} alt="학회 라운지 이미지" />
+      <LoungeImg src={lounge3} alt="학회 라운지 이미지" />
+      <LoungeImg src={lounge4} alt="학회 라운지 이미지" />
+      <LoungeImg src={lounge5} alt="학회 라운지 이미지" />
+    </DetailPageCarousel>
   </>
 );
 
