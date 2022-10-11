@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-// import { supabase } from '../../supabase';
+import axios from 'axios';
 
 const generationCnt = 2;
 const generations = [];
@@ -9,9 +9,6 @@ for (let i = 1; i <= generationCnt; i++) {
 }
 
 const MembersPage = () => {
-  // 리스트 넣고, id값으로 관리
-  // click event 있으면, 그 노드의 목록을 가져온다.
-  // 컴포넌트 main -> sideNav + 목록
   const [selectedGeneration, setSelectedGenereation] = useState('1');
   const [nodeData, setNodeData] = useState(-1);
 
@@ -20,7 +17,6 @@ const MembersPage = () => {
   };
 
   const loadData = () => {
-    console.log(selectedGeneration);
     if (selectedGeneration === '1') {
       setNodeData(testData);
     }
@@ -29,38 +25,12 @@ const MembersPage = () => {
     }
   };
 
-  // const getNodeInfo = async (generation, role) => {
-  //   try {
-  //     const { data, error, status } = await supabase
-  //       .from('NODE')
-  //       .select(
-  //         `
-  //         node_id,
-  //         name,
-  //         generation,
-  //         role,
-  //         image
-  //       `
-  //       )
-  //       .match({ generation, role });
-
-  //     if (error && status !== 406) {
-  //       throw error;
-  //     }
-
-  //     if (data) {
-  //       setNodeData(data);
-  //       console.log(data);
-  //     }
-  //   } catch (error) {
-  //     console.log(error);
-  //   } finally {
-  //     console.log('done');
-  //   }
-  // };
-
   useEffect(() => {
     loadData();
+    axios
+      .get('http://203.229.173.93:81/nodeInfo?node_id=20220101')
+      .then(res => console.log(res.data))
+      .catch(err => console.log(err));
   }, [selectedGeneration]);
 
   return (

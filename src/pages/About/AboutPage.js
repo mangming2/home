@@ -27,9 +27,11 @@ const Tab = styled.div`
   position: relative;
 
   &::after {
-    content: '';
+    color: rgba(255, 255, 255, 0.6);
+    /* content: ''; */
     height: 4px;
     display: ${props => (props['aria-selected'] ? 'inline-block' : 'none')};
+    /* height: 4px; */
     width: 100%;
     position: absolute;
     bottom: -5px;
@@ -48,6 +50,11 @@ const TabTxt = styled.span`
   color: #ffffff;
   text-shadow: -1px 0px rgba(0, 49, 187, 0.65), 0px 1px rgba(0, 49, 187, 0.65), 1px 0px rgba(0, 49, 187, 0.65),
     0px -1px rgba(0, 49, 187, 0.65), 0px 4px 34px rgba(61, 87, 160, 0.85);
+
+  &::after {
+    display: ${props => (props['aria-selected'] ? 'inline-block' : 'none')};
+    color: rgba(255, 255, 255, 0.6);
+  }
 `;
 
 const AboutPage = () => {
