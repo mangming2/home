@@ -41,72 +41,72 @@ const DetailItem = styled.p`
   }
 `;
 
-const SliderContainer = styled.div`
-  padding-top: 30px;
-  padding-left: 80px;
-  overflow: hidden;
-`;
+// const SliderContainer = styled.div`
+//   padding-top: 30px;
+//   padding-left: 80px;
+//   overflow: hidden;
+// `;
 
-const ImgContainer = styled.div`
-  padding-right: 40px;
-`;
+// const ImgContainer = styled.div`
+//   padding-right: 40px;
+// `;
 
 const LoungeImg = styled.img`
   width: 20vw;
   /* border-radius: 5px; */
 `;
 
-const StyledSlider = styled(Slider)`
-  /* Slider */
-  height: 350px;
-  position: relative;
+// const StyledSlider = styled(Slider)`
+//   /* Slider */
+//   height: 350px;
+//   position: relative;
 
-  .slick-loading .slick-list {
-    /* background: #fff url('./ajax-loader.gif') center center no-repeat; */
-  }
+//   .slick-loading .slick-list {
+//     /* background: #fff url('./ajax-loader.gif') center center no-repeat; */
+//   }
 
-  .slick-slide {
-    float: left;
-    min-height: 1px;
-  }
+//   .slick-slide {
+//     float: left;
+//     min-height: 1px;
+//   }
 
-  .slick-track {
-    display: flex;
-  }
+//   .slick-track {
+//     display: flex;
+//   }
 
-  /* Arrows */
-  .slick-prev,
-  .slick-next {
-    position: absolute;
-    display: block;
-    width: 50px;
-    height: 50px;
-    -webkit-transform: translate(0, -50%);
-    -ms-transform: translate(0, -50%);
-    transform: translate(0, -50%);
-    cursor: pointer;
-    top: 83%;
-  }
+//   /* Arrows */
+//   .slick-prev,
+//   .slick-next {
+//     position: absolute;
+//     display: block;
+//     width: 50px;
+//     height: 50px;
+//     -webkit-transform: translate(0, -50%);
+//     -ms-transform: translate(0, -50%);
+//     transform: translate(0, -50%);
+//     cursor: pointer;
+//     top: 83%;
+//   }
 
-  .slick-prev.slick-disabled,
-  .slick-next.slick-disabled {
-    cursor: not-allowed;
-    opacity: 0.25;
-  }
+//   .slick-prev.slick-disabled,
+//   .slick-next.slick-disabled {
+//     cursor: not-allowed;
+//     opacity: 0.25;
+//   }
 
-  .slick-prev:before,
-  .slick-next:before {
-    display: none;
-  }
+//   .slick-prev:before,
+//   .slick-next:before {
+//     display: none;
+//   }
 
-  .slick-prev {
-    left: 45%;
-  }
+//   .slick-prev {
+//     left: 45%;
+//   }
 
-  .slick-next {
-    left: 50%;
-  }
-`;
+//   .slick-next {
+//     left: 50%;
+//   }
+// `;
 
 // const Arrow = props => {
 //   const { className, style, onClick, isRight } = props;
