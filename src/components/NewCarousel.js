@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import AliceCarousel from 'react-alice-carousel';
+import './carousel.css';
 
 const Contain = styled.div`
-  width: 78%;
   display: flex;
   align-items: center;
-  margin: 20px auto;
+  margin: 5vw 11.7vw;
 `;
 
 const NewCarousel = ({ children }) => {
@@ -14,13 +14,13 @@ const NewCarousel = ({ children }) => {
     0: {
       items: 1,
     },
-    512: {
+    312: {
       items: 1,
     },
-    800: {
+    650: {
       items: 2,
     },
-    1024: {
+    980: {
       items: 3,
     },
     1400: {
@@ -37,15 +37,15 @@ const NewCarousel = ({ children }) => {
       <AliceCarousel
         mouseTracking
         infinite={true}
-        animationDuration={2000}
-        autoPlayInterval={3000}
+        // animationDuration={2000}
+        // autoPlayInterval={3000}
         disableDotsControls
         disableButtonsControls
         responsive={responsive}
-        autoPlay
+        // autoPlay
         items={children}
         fadeOutAnimation={true}
-        paddingLeft={50}
+        // paddingLeft={50}
       />
     </Contain>
   );

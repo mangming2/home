@@ -3,13 +3,12 @@ import { useEffect, useState } from 'react';
 import XMLParser from 'react-xml-parser';
 import styled from 'styled-components';
 import NewCarousel from './NewCarousel';
-// import Carousel from './Carousel';
 
 const CardBox = styled.div`
   background-color: white;
   width: 230px;
   border-radius: 10px;
-  margin: 0 20px;
+  margin: 0 auto;
   height: 290px;
   cursor: pointer;
   &:hover {
