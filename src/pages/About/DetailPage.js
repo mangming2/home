@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Slider from 'react-slick';
+// import Slider from 'react-slick';
 import lounge1 from '../../assets/images/lounge1.jpeg';
 import lounge2 from '../../assets/images/lounge2.jpeg';
 import lounge3 from '../../assets/images/lounge3.jpeg';
