@@ -46,7 +46,7 @@ const Tab = styled.div`
 `;
 
 const TabTxt = styled.span`
-  font-weight: 800;
+  font-weight: 400;
   font-size: 2.3rem;
   line-height: 48px;
   text-align: center;
@@ -59,6 +59,7 @@ const TabTxt = styled.span`
   }
 
   &.isActive {
+    font-weight: 600;
     color: #ffffff;
     text-shadow: 0px 8px 43px rgba(19, 72, 224, 0.75);
   }
