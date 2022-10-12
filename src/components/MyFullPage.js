@@ -41,38 +41,6 @@ const JoinDetail = styled.p`
   margin-bottom: 10px;
 `;
 
-const Btn = styled.button`
-  margin-top: 20px;
-  position: relative;
-  border: none;
-  min-width: 200px;
-  min-height: 50px;
-  background: linear-gradient(90deg, rgba(129, 230, 217, 1) 0%, rgba(79, 209, 197, 1) 100%);
-  border-radius: 1000px;
-  color: darkslategray;
-  cursor: pointer;
-  box-shadow: 12px 12px 24px rgba(79, 209, 197, 0.64);
-  font-weight: 700;
-  transition: 0.3s;
-  &:hover {
-    transform: scale(1.2);
-    letter-spacing: 2px;
-  }
-  &:hover::after {
-    content: '';
-    width: 30px;
-    height: 30px;
-    border-radius: 100%;
-    border: 6px solid #00ffcb;
-    position: absolute;
-    z-index: -100;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: 1.2s ring infinite;
-  }
-`;
-
 const SponsorBox = styled.img`
   width: 60%;
   margin: 7vh auto;
