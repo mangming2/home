@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { FullPage, Slide } from 'react-full-page';
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 import MediumCard from './MediumCard';
 import FirstImg from '../assets/page-first.svg';
 import FirstIcon from '../assets/Bitcoin-1.svg';
 import SecondIcon from '../assets/Etherium-2 copy 1.svg';
 import Footer from './Footer';
+import Partners from '../assets/Frame 124.svg';
+import './btn.css';
 
 const Fullimg = styled.img`
   width: 100%;
@@ -23,13 +26,13 @@ const ExceptFooter = styled.div`
 `;
 
 const JoinTitle = styled.p`
-  font-size: 2.1rem;
+  font-size: 2rem;
   font-weight: 600;
 `;
 
 const JoinText = styled.div`
   text-align: center;
-  margin-top: 5vh;
+  margin-top: 2vh;
 `;
 
 const JoinDetail = styled.p`
@@ -39,7 +42,7 @@ const JoinDetail = styled.p`
 `;
 
 const Btn = styled.button`
-  /* margin-top: 20px; */
+  margin-top: 20px;
   position: relative;
   border: none;
   min-width: 200px;
@@ -66,21 +69,25 @@ const Btn = styled.button`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    animation: coccoc-alo-circle-anim 1.2s infinite ease-in-out;
+    animation: 1.2s ring infinite;
   }
 `;
 
-const SponsorBox = styled.div``;
+const SponsorBox = styled.img`
+  width: 60%;
+  margin: 7vh auto;
+`;
 
 const BoldDetail = styled.p`
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 600;
   margin-bottom: 20px;
 `;
 
 const Sponsor = styled.div`
   margin: 2vh 11.7vw;
-  background-color: blue;
+  display: flex;
+  flex-direction: column;
   height: 30vh;
 `;
 
@@ -127,7 +134,7 @@ const Text = styled.div`
 `;
 
 const Middle = styled.p`
-  font-size: 3.5rem;
+  font-size: 45px;
   font-weight: 600;
   text-shadow: 0px 0px 50px rgba(6, 61, 285, 0.8);
   margin-bottom: 3vh;
@@ -146,7 +153,7 @@ const ImgBox = styled.div`
 `;
 
 const GoToJoin = styled.div`
-  background-color: green;
+  /* background-color: green; */
   margin-left: 11.7vw;
   margin-right: 11.7vw;
   height: 35vh;
@@ -254,17 +261,19 @@ function MyFullPage() {
         <LastContent>
           <ExceptFooter height={windowSize.height - 189.2}>
             <GoToJoin>
-              <JoinTitle>🚀 Join us</JoinTitle>
+              <JoinTitle>Join us</JoinTitle>
               <JoinText>
                 <BoldDetail>우리는 혼자 할 수 없고, 함께해야만 할 수 있다는 것을 확신합니다.</BoldDetail>
                 <JoinDetail>WEB 3.0이라는 거대한 물결에 함께 올라탈</JoinDetail>
                 <JoinDetail>예비 노드 여러분의 지원을 기다립니다.</JoinDetail>
-                <Btn>Join us</Btn>
+                <button className="w-btn-neon2" type="button">
+                  <NavLink to="/join">Join us</NavLink>
+                </button>
               </JoinText>
             </GoToJoin>
             <Sponsor>
-              <JoinTitle>🔥 Our Partners</JoinTitle>
-              <SponsorBox></SponsorBox>
+              <JoinTitle>Our Partners</JoinTitle>
+              <SponsorBox src={Partners}></SponsorBox>
             </Sponsor>
           </ExceptFooter>
           <Footer />

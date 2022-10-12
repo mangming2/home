@@ -23,7 +23,7 @@ const PageBox = styled.div`
 `;
 
 const Title = styled.p`
-  font-size: 42px;
+  font-size: 39px;
   font-weight: 600;
   text-align: center;
   text-shadow: 0px 0px 50px rgba(6, 61, 285, 0.8);

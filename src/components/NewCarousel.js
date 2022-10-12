@@ -32,8 +32,8 @@ const NewCarousel = ({ children }) => {
       <AliceCarousel
         mouseTracking
         infinite={true}
-        animationDuration={2000}
-        autoPlayInterval={2500}
+        animationDuration={800}
+        autoPlayInterval={3000}
         disableDotsControls
         disableButtonsControls
         responsive={responsive}

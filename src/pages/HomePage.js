@@ -7,6 +7,10 @@ import MyFullPage from '../components/MyFullPage';
 //   height: 100vh;
 // `;
 
-const HomePage = () => <MyFullPage />;
+const HomePage = () => (
+  <>
+    <MyFullPage />
+  </>
+);
 
 export default HomePage;
