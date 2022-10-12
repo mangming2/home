@@ -5,7 +5,6 @@ import MediumCard from './MediumCard';
 import FirstImg from '../assets/page-first.svg';
 import FirstIcon from '../assets/Bitcoin-1.svg';
 import SecondIcon from '../assets/Etherium-2 copy 1.svg';
-import Line from '../assets/Line 2.svg';
 import Footer from './Footer';
 
 const Fullimg = styled.img`
@@ -187,9 +186,6 @@ function MyFullPage() {
       width: window.innerWidth,
       height: window.innerHeight,
     });
-  };
-  const onCallback = () => {
-    console.log('awesome');
   };
   const [scrollY, setScrollY] = useState(0);
   const handleScroll = () => {
