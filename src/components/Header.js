@@ -11,9 +11,10 @@ const StyledHeader = styled.header`
   justify-content: space-between;
   align-items: center;
   height: 6.25rem;
-  background-color: #0b0811;
+  /* background-color: #0b0811; */
   z-index: 9900;
   padding: 0 11.7vw 0 11.7vw;
+  opacity: 100%;
 `;
 
 const Logo = styled.h1`

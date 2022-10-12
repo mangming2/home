@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import Main from '../components/Main';
 import EmailToUs from '../components/EmailToUs';
 import ContactDetail from '../components/ContactDetail';
+import Footer from '../components/Footer';
 
 const ContactBox = styled.div`
   display: flex;
@@ -16,6 +17,7 @@ const ContactPage = () => (
       <ContactDetail />
       <EmailToUs />
     </ContactBox>
+    <Footer />
   </Main>
 );
 
