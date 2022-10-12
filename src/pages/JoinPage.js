@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import TimelineObserver from 'react-timeline-animation';
 import animationData from '../animations/98428-arrow-down-purple.json';
+import Footer from '../components/Footer';
 
 import Main from '../components/Main';
 import JoinDeatil from '../components/JoinDetail';
@@ -95,6 +96,7 @@ function JoinPage() {
         <NotNowTop>지금은 지원 기간이 아닙니다</NotNowTop>
         <NotNow>지원 기간에 업로드될 공지를 확인해주세요</NotNow>
       </PageBox>
+      <Footer />
     </Main>
   );
 }

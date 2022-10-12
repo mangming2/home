@@ -5,6 +5,7 @@ import Main from '../../components/Main';
 import DetailPage from './DetailPage';
 import SessionPage from './SessionPage';
 import MembersPage from './MembersPage';
+import Footer from '../../components/Footer';
 
 const MainInner = styled.div`
   padding-top: 3rem;
@@ -100,6 +101,7 @@ const AboutPage = () => {
         </Tablist>
         {content}
       </MainInner>
+      <Footer />
     </Main>
   );
 };

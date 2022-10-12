@@ -7,7 +7,6 @@ import LogPage from './pages/LogPage';
 import ContactPage from './pages/ContactPage';
 import JoinPage from './pages/JoinPage';
 import NotFoundPage from './pages/NotFoundPage';
-import Footer from './components/Footer';
 import './App.css';
 import GlobalStyles from './GlobalStyles';
 
@@ -30,7 +29,6 @@ function App() {
           </Routes>
         </CSSTransition>
       </TransitionGroup>
-      <Footer />
     </>
   );
 }
