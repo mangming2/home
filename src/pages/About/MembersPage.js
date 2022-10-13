@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import axios from 'axios';
+// import axios from 'axios';
 import githubLogo from '../../assets/GitHub_Logo_White.png';
 import mediumLogo from '../../assets/Medium-Logo-White-RGB@4x.png';
 import loading from '../../assets/loadingAni2.svg';
+
+import { tempData1, tempData2 } from '../../.tempdata';
 
 const generationCnt = 2;
 const generations = [];
@@ -23,14 +25,14 @@ const MembersPage = () => {
     fetchData(parseInt(selectedGeneration, 10));
   };
 
-  const fetchData = gen => {
-    axios
-      .get(`https://bv-main-db-server.herokuapp.com/nodeInfo?generation=${gen}&image=y`, {})
-      .then(res => {
-        setNodeData(res.data);
-      })
-      .catch(err => console.log(err));
-  };
+  const fetchData = gen => (gen === 1 ? setNodeData(tempData1) : setNodeData(tempData2));
+
+  // axios
+  //   .get(`https://bv-main-db-server.herokuapp.com/nodeInfo?generation=${gen}&image=y`)
+  //   .then(res => {
+  //     setNodeData(res.data);
+  //   })
+  //   .catch(err => console.log(err));
 
   useEffect(() => {
     loadData();

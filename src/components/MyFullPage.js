@@ -17,9 +17,9 @@ const Fullimg = styled.img`
   object-fit: cover;
   /* height: ${props => `${props.height}px`}; */
   animation: fadein 4s;
-  -moz-animation: fadein 3s; /* Firefox */
-  -webkit-animation: fadein 3s; /* Safari and Chrome */
-  -o-animation: fadein 3s; /* Opera */
+  -moz-animation: fadein 4s; /* Firefox */
+  -webkit-animation: fadein 4s; /* Safari and Chrome */
+  -o-animation: fadein 4s; /* Opera */
   @keyframes fadein {
     from {
       opacity: 0;
