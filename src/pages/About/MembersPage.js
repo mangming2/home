@@ -24,7 +24,8 @@ const MembersPage = () => {
 
   const fetchData = gen => {
     axios
-      .get(`http://203.229.173.93:81/nodeInfo?generation=${gen}&image=y`)
+      // .get(`http://203.229.173.93:81/nodeInfo?generation=${gen}&image=y`)
+      .get(`https://bv-main-db-server.herokuapp.com/nodeInfo?generation=${gen}&image=y`, {})
       .then(res => {
         setNodeData(res.data);
       })
