@@ -103,7 +103,7 @@ const FollowUsLogoLink = styled.a`
   border-radius: 10px;
   align-items: center;
   transition: all 0.2s ease-in-out;
-  margin: 20px 27px 20px 0px;
+  margin: 0px 27px 20px 0px;
 
   &:hover {
     background: rgba(0, 0, 0, 0.4);
@@ -117,10 +117,10 @@ const LoadingAnimation = styled.img`
 `;
 
 const LogoContainer = styled.div`
+  margin-top: 15px;
   display: flex;
   flex-direction: row;
   justify-content: left;
-  align-items: center;
 `;
 
 const Logo = styled.img`
