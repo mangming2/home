@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+import githubLogo from '../../assets/GitHub_Logo_White.png';
+import mediumLogo from '../../assets/Medium-Logo-White-RGB@4x.png';
 
 const generationCnt = 2;
 const generations = [];
@@ -58,13 +60,23 @@ const MembersPage = () => {
               <NameContainer>
                 <NameTxt>{node.NAME}</NameTxt>
                 <InfoTxt>
-                  {node.GENERATION}th | {node.ROLE === 'dev' ? '개발팀' : '리서치팀'}
+                  {node.GENERATION}기 | {node.ROLE === 'dev' ? '개발팀' : '리서치팀'}
                 </InfoTxt>
               </NameContainer>
-              {/* 데이터 베이스에 데이터 추가후 아래 부분 수정할것 */}
-              <ContactlTxt>jinseongbe@gmail.com</ContactlTxt>
-              <ContactlTxt>github</ContactlTxt>
-              <ContactlTxt>instagram</ContactlTxt>
+              {node.EMAIL === '' ? null : <ContactlTxt>{node.EMAIL}</ContactlTxt>}
+              {node.INSTAGRAM === '' ? null : <ContactlTxt>{node.INSTAGRAM}</ContactlTxt>}
+              <LogoContainer>
+                {node.GITHUB === '' ? null : (
+                  <ContactlTxt>
+                    <Logo src={githubLogo} />
+                  </ContactlTxt>
+                )}
+                {node.MIDIUM === '' ? null : (
+                  <ContactlTxt>
+                    <Logo src={mediumLogo} />
+                  </ContactlTxt>
+                )}
+              </LogoContainer>
             </Card>
           ))}
         </MembersContainer>
@@ -72,6 +84,15 @@ const MembersPage = () => {
     </Container>
   );
 };
+
+const LogoContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+const Logo = styled.img`
+  height: 25px;
+`;
 
 const Container = styled.div`
   margin: 0 11.7vw;

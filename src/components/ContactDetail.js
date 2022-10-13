@@ -4,7 +4,7 @@ import Location from '../assets/location.svg';
 import Mail from '../assets/mail.svg';
 import Discord from '../assets/discord.svg';
 import Insta from '../assets/instagram.svg';
-import Telegram from '../assets/telegram.svg';
+// import Telegram from '../assets/telegram.svg';
 import Medium from '../assets/medium.svg';
 
 const Box = styled.div`
@@ -185,9 +185,9 @@ function ContactDetail() {
           <FollowUsLogoLink rel="noopener noreferrer" target="_blank" href="https://medium.com/blockchain-valley">
             <FollowUsLogoImg src={Medium} alt="블록체인 밸리 미디엄"></FollowUsLogoImg>
           </FollowUsLogoLink>
-          <FollowUsLogoLink rel="noopener noreferrer" target="_blank" href="https://telegram.org/">
+          {/* <FollowUsLogoLink rel="noopener noreferrer" target="_blank" href="https://telegram.org/">
             <FollowUsLogoImg src={Telegram} alt="블록체인 밸리 텔레그램"></FollowUsLogoImg>
-          </FollowUsLogoLink>
+          </FollowUsLogoLink> */}
         </FollowUsLogos>
       </FollowUs>
     </Box>

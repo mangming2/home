@@ -4,7 +4,7 @@ import LogoGray from '../assets/bv_logo_gray.png';
 import DiscordLogo from '../assets/discord.svg';
 import InstagramLogo from '../assets/instagram.svg';
 import MediumLogo from '../assets/medium.svg';
-import TelegramLogo from '../assets/telegram.svg';
+// import TelegramLogo from '../assets/telegram.svg';
 
 const StyledFooter = styled.footer`
   display: flex;
@@ -92,9 +92,9 @@ const Footer = () => (
           <FollowUsLogoLink rel="noopener noreferrer" target="_blank" href="https://medium.com/blockchain-valley">
             <FollowUsLogoImg src={MediumLogo} alt="블록체인밸리 미디엄"></FollowUsLogoImg>
           </FollowUsLogoLink>
-          <FollowUsLogoLink rel="noopener noreferrer" target="_blank" href="https://telegram.org/">
+          {/* <FollowUsLogoLink rel="noopener noreferrer" target="_blank" href="https://telegram.org/">
             <FollowUsLogoImg src={TelegramLogo} alt="블록체인밸리 텔레그램"></FollowUsLogoImg>
-          </FollowUsLogoLink>
+          </FollowUsLogoLink> */}
         </FollowUsLogos>
         <Txt>Copyright Blockchain Valley. All rights reserved.</Txt>
       </LeftContainer>
