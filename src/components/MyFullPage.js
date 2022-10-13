@@ -13,8 +13,10 @@ import './btn.css';
 const Fullimg = styled.img`
   width: 100%;
   opacity: 0.6;
+  height: 100vh;
+  object-fit: cover;
   /* height: ${props => `${props.height}px`}; */
-  animation: fadein 3s;
+  animation: fadein 4s;
   -moz-animation: fadein 3s; /* Firefox */
   -webkit-animation: fadein 3s; /* Safari and Chrome */
   -o-animation: fadein 3s; /* Opera */
@@ -23,7 +25,7 @@ const Fullimg = styled.img`
       opacity: 0;
     }
     to {
-      opacity: 1;
+      opacity: 0.6;
     }
   }
   @-moz-keyframes fadein {
@@ -32,7 +34,7 @@ const Fullimg = styled.img`
       opacity: 0;
     }
     to {
-      opacity: 1;
+      opacity: 0.6;
     }
   }
   @-webkit-keyframes fadein {
@@ -41,7 +43,7 @@ const Fullimg = styled.img`
       opacity: 0;
     }
     to {
-      opacity: 1;
+      opacity: 0.6;
     }
   }
   @-o-keyframes fadein {
@@ -50,7 +52,7 @@ const Fullimg = styled.img`
       opacity: 0;
     }
     to {
-      opacity: 1;
+      opacity: 0.6;
     }
   }
 `;

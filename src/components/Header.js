@@ -59,7 +59,7 @@ const PageLink = styled(NavLink)`
     font-weight: 800;
     color: #fff;
 
-    &::after {
+    /* &::after {
       content: '';
       position: absolute;
       bottom: -5px;
@@ -68,7 +68,7 @@ const PageLink = styled(NavLink)`
       width: 100%;
       height: 3px;
       background-color: #fff;
-    }
+    } */
   }
 `;
 
