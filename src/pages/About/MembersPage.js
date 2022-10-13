@@ -49,7 +49,7 @@ const MembersPage = () => {
             id={el}
             className={el === parseInt(selectedGeneration, 10) ? 'isActive' : ''}
             onClick={generationClickHandler}>
-            {`${el}th`}
+            {`${el}기`}
           </NavItem>
         ))}
       </NavList>
