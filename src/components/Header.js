@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import LogoWhite from '../assets/bv_logo_white.png';
@@ -11,10 +12,13 @@ const StyledHeader = styled.header`
   justify-content: space-between;
   align-items: center;
   height: 6.25rem;
-  /* background-color: #0b0811; */
   z-index: 9900;
   padding: 0 11.7vw 0 11.7vw;
   opacity: 100%;
+  /* background-color: #0b0811; */
+  &.isActive {
+    background-color: #0b0811;
+  }
 `;
 
 const Logo = styled.h1`
@@ -79,43 +83,71 @@ const PageTxt = styled.span`
   vertical-align: center;
 `;
 
-const Header = () => (
-  <StyledHeader>
-    <Logo>
-      <LogoLink to="/home">
-        <img height={44} src={LogoWhite} alt="블록체인 밸리" />
-      </LogoLink>
-    </Logo>
-    <Nav>
-      <PageList>
-        <PageItem>
-          <PageLink to="/home">
-            <PageTxt>Home</PageTxt>
-          </PageLink>
-        </PageItem>
-        <PageItem>
-          <PageLink to="/about">
-            <PageTxt>About Us</PageTxt>
-          </PageLink>
-        </PageItem>
-        {/* <PageItem>
-          <PageLink to="/log">
+const Header = () => {
+  const [showBackground, setShowBackground] = useState(false);
+
+  return (
+    <StyledHeader className={showBackground ? 'isActive' : ''}>
+      <Logo>
+        <LogoLink
+          to="/home"
+          onClick={() => {
+            setShowBackground(false);
+          }}>
+          <img height={44} src={LogoWhite} alt="블록체인 밸리" />
+        </LogoLink>
+      </Logo>
+      <Nav>
+        <PageList>
+          <PageItem>
+            <PageLink to="/home">
+              <PageTxt
+                onClick={() => {
+                  setShowBackground(false);
+                }}>
+                Home
+              </PageTxt>
+            </PageLink>
+          </PageItem>
+          <PageItem>
+            <PageLink to="/about">
+              <PageTxt
+                onClick={() => {
+                  setShowBackground(true);
+                }}>
+                About Us
+              </PageTxt>
+            </PageLink>
+          </PageItem>
+          {/* <PageItem>
+          <PageLink to="/log" >
             <PageTxt>Log</PageTxt>
           </PageLink>
         </PageItem> */}
-        <PageItem>
-          <PageLink to="/contact">
-            <PageTxt>Contact</PageTxt>
-          </PageLink>
-        </PageItem>
-        <PageItem>
-          <PageLink to="/join">
-            <PageTxt>Join Us</PageTxt>
-          </PageLink>
-        </PageItem>
-      </PageList>
-    </Nav>
-  </StyledHeader>
-);
+          <PageItem>
+            <PageLink to="/contact">
+              <PageTxt
+                onClick={() => {
+                  setShowBackground(true);
+                }}>
+                Contact
+              </PageTxt>
+            </PageLink>
+          </PageItem>
+          <PageItem>
+            <PageLink to="/join">
+              <PageTxt
+                onClick={() => {
+                  setShowBackground(true);
+                }}>
+                Join Us
+              </PageTxt>
+            </PageLink>
+          </PageItem>
+        </PageList>
+      </Nav>
+    </StyledHeader>
+  );
+};
 
 export default Header;
