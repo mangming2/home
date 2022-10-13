@@ -20,23 +20,6 @@ const Fullimg = styled.img`
   -moz-animation: fadein 4s; /* Firefox */
   -webkit-animation: fadein 4s; /* Safari and Chrome */
   -o-animation: fadein 4s; /* Opera */
-  @keyframes fadein {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 0.6;
-    }
-  }
-  @-moz-keyframes fadein {
-    /* Firefox */
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 0.6;
-    }
-  }
   @-webkit-keyframes fadein {
     /* Safari and Chrome */
     from {
@@ -46,8 +29,8 @@ const Fullimg = styled.img`
       opacity: 0.6;
     }
   }
-  @-o-keyframes fadein {
-    /* Opera */
+  @keyframes fadein {
+    /* Safari and Chrome */
     from {
       opacity: 0;
     }
