@@ -95,7 +95,7 @@ const Logo = styled.img`
 `;
 
 const Container = styled.div`
-  margin: 0 11.7vw;
+  /* margin: 0 11.7vw; */
   display: flex;
   flex-direction: column;
   justify-content: left;

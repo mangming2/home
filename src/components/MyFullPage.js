@@ -248,8 +248,8 @@ function MyFullPage() {
             <Text2>
               <Title>Our activities</Title>
               <Detail>
-                1기 리크루팅을 통하여, 현재 10명의 Product Maker와 9명의 Crypto Analyst, 총 19명이 노드로 활동하고
-                있습니다.
+                현재 18명의 리서처팀과 19명의 개발팀으로 구성되어 있으며, 총 37명이 노드로 활동하며 활발한 리서치 활동과
+                프로덕트 개발을 하고 있습니다.
               </Detail>
             </Text2>
             <div>
