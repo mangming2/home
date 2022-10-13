@@ -58,6 +58,7 @@ const PageLink = styled(NavLink)`
     position: relative;
     font-weight: 800;
     color: #fff;
+    /* color: red; */
 
     /* &::after {
       content: '';
@@ -88,7 +89,7 @@ const Header = () => (
     <Nav>
       <PageList>
         <PageItem>
-          <PageLink to="/">
+          <PageLink to="/home">
             <PageTxt>Home</PageTxt>
           </PageLink>
         </PageItem>
