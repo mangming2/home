@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 // import axios from 'axios';
-import githubLogo from '../../assets/GitHub_Logo_White.png';
-import mediumLogo from '../../assets/Medium-Logo-White-RGB@4x.png';
+import githubLogo from '../../assets/github.svg';
+import mediumLogo from '../../assets/medium.svg';
+import instagramLogo from '../../assets/instagram.svg';
 import loading from '../../assets/loadingAni2.svg';
 
 import { tempData1, tempData2 } from '../../.tempdata';
@@ -69,17 +70,21 @@ const MembersPage = () => {
                 </InfoTxt>
               </NameContainer>
               {node.EMAIL === '' ? null : <ContactlTxt>{node.EMAIL}</ContactlTxt>}
-              {node.INSTAGRAM === '' ? null : <ContactlTxt>{node.INSTAGRAM}</ContactlTxt>}
               <LogoContainer>
+                {node.INSTAGRAM === '' ? null : (
+                  <FollowUsLogoLink rel="noopener noreferrer" target="_blank" href={node.INSTAGRAM}>
+                    <Logo src={instagramLogo} />
+                  </FollowUsLogoLink>
+                )}
                 {node.GITHUB === '' ? null : (
-                  <ContactlTxt>
+                  <FollowUsLogoLink rel="noopener noreferrer" target="_blank" href={node.GITHUB}>
                     <Logo src={githubLogo} />
-                  </ContactlTxt>
+                  </FollowUsLogoLink>
                 )}
                 {node.MIDIUM === '' ? null : (
-                  <ContactlTxt>
+                  <FollowUsLogoLink rel="noopener noreferrer" target="_blank" href={node.MIDIUM}>
                     <Logo src={mediumLogo} />
-                  </ContactlTxt>
+                  </FollowUsLogoLink>
                 )}
               </LogoContainer>
             </Card>
@@ -90,6 +95,22 @@ const MembersPage = () => {
   );
 };
 
+const FollowUsLogoLink = styled.a`
+  display: flex;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  border-radius: 10px;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  margin: 20px 27px 20px 0px;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.4);
+    border-radius: 16px;
+  }
+`;
 const LoadingAnimation = styled.img`
   opacity: 60%;
   width: 15vw;
@@ -98,10 +119,12 @@ const LoadingAnimation = styled.img`
 const LogoContainer = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: left;
+  align-items: center;
 `;
 
 const Logo = styled.img`
-  height: 25px;
+  height: 32px;
 `;
 
 const Container = styled.div`
