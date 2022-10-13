@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import axios from 'axios';
 import githubLogo from '../../assets/GitHub_Logo_White.png';
 import mediumLogo from '../../assets/Medium-Logo-White-RGB@4x.png';
+import loading from '../../assets/loadingAni2.svg';
 
 const generationCnt = 2;
 const generations = [];
@@ -24,7 +25,6 @@ const MembersPage = () => {
 
   const fetchData = gen => {
     axios
-      // .get(`http://203.229.173.93:81/nodeInfo?generation=${gen}&image=y`)
       .get(`https://bv-main-db-server.herokuapp.com/nodeInfo?generation=${gen}&image=y`, {})
       .then(res => {
         setNodeData(res.data);
@@ -52,7 +52,9 @@ const MembersPage = () => {
       </NavList>
 
       {nodeData === -1 ? (
-        <Loading>Loding~</Loading>
+        <Loading>
+          <LoadingAnimation src={loading} />
+        </Loading>
       ) : (
         <MembersContainer>
           {nodeData.map((node, idx) => (
@@ -85,6 +87,11 @@ const MembersPage = () => {
     </Container>
   );
 };
+
+const LoadingAnimation = styled.img`
+  opacity: 60%;
+  width: 15vw;
+`;
 
 const LogoContainer = styled.div`
   display: flex;
@@ -172,9 +179,10 @@ const Img = styled.img`
 `;
 
 const Loading = styled.div`
-  margin: 10rem;
-  font-size: 3rem;
-  font-weight: bold;
+  display: flex;
+  width: 100%;
+  height: 50vh;
+  justify-content: center;
 `;
 
 const NavList = styled.ul`

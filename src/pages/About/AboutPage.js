@@ -93,9 +93,9 @@ const AboutPage = () => {
           <Tab id="DETAIL" role="tab" aria-selected={innerPage === 'DETAIL'}>
             <TabTxt className={innerPage === 'DETAIL' ? 'isActive' : ''}>Detail</TabTxt>
           </Tab>
-          <Tab id="SESSION" role="tab" aria-selected={innerPage === 'SESSION'}>
+          {/* <Tab id="SESSION" role="tab" aria-selected={innerPage === 'SESSION'}>
             <TabTxt className={innerPage === 'SESSION' ? 'isActive' : ''}>Session</TabTxt>
-          </Tab>
+          </Tab> */}
           <Tab id="MEMBERS" role="tab" aria-selected={innerPage === 'MEMBERS'}>
             <TabTxt className={innerPage === 'MEMBERS' ? 'isActive' : ''}>Members</TabTxt>
           </Tab>
