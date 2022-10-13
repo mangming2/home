@@ -82,7 +82,7 @@ const PageTxt = styled.span`
 const Header = () => (
   <StyledHeader>
     <Logo>
-      <LogoLink to="/">
+      <LogoLink to="/home">
         <img height={44} src={LogoWhite} alt="블록체인 밸리" />
       </LogoLink>
     </Logo>
