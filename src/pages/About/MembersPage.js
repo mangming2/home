@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-// import axios from 'axios';
+import axios from 'axios';
 import githubLogo from '../../assets/github.svg';
 import mediumLogo from '../../assets/medium.svg';
 import instagramLogo from '../../assets/instagram.svg';
@@ -26,8 +26,15 @@ const MembersPage = () => {
     fetchData(parseInt(selectedGeneration, 10));
   };
 
-  const fetchData = gen => (gen === 1 ? setNodeData(tempData1) : setNodeData(tempData2));
+  // const fetchData = gen => (gen === 1 ? setNodeData(tempData1) : setNodeData(tempData2));
 
+  const fetchData = gen =>
+    axios
+      .get(`https://bv-main-db-server.herokuapp.com/nodeInfo?generation=${gen}&image=y`)
+      .then(res => {
+        setNodeData(res.data);
+      })
+      .catch(err => console.log(err));
   // axios
   //   .get(`https://bv-main-db-server.herokuapp.com/nodeInfo?generation=${gen}&image=y`)
   //   .then(res => {
