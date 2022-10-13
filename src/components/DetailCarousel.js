@@ -6,7 +6,7 @@ import './detailCarousel.css';
 const Contain = styled.div`
   display: flex;
   align-items: center;
-  margin: 5vw 11.7vw;
+  margin: 3vw 0 5vw 0;
 `;
 
 const DetailPageCarousel = ({ children }) => {

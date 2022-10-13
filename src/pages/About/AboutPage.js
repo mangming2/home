@@ -12,14 +12,15 @@ const MainInner = styled.div`
   display: flex;
   flex-direction: column;
   width: 100vw;
+  padding: 0 11.7vw;
 `;
 
 const Tablist = styled.div`
   display: flex;
   justify-content: left;
   align-items: center;
-  padding: 30px;
-  width: 80%;
+  padding: 30px 0;
+  width: 100%;
   margin: 0 auto;
 `;
 

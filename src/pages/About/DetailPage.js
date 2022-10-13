@@ -19,7 +19,7 @@ const Subtitle = styled.h3`
   font-weight: 700;
   font-size: 32px;
   margin-top: 200px;
-  margin-left: 80px;
+  /* margin-left: 80px; */
 `;
 
 const DetailContainer = styled.div`
@@ -52,9 +52,39 @@ const DetailItem = styled.p`
 // `;
 
 const LoungeImg = styled.img`
-  width: 20vw;
+  width: 18vw;
+  border-radius: 1.4rem;
   /* border-radius: 5px; */
+  & + & {
+    margin-left: 2;
+  }
 `;
+
+const DetailPage = () => (
+  <>
+    <MainTitle>“다가올 WEB 3.0의 미래를 함께 만들어나갈 혁신가들의 공간”</MainTitle>
+    <DetailContainer>
+      <DetailItem># 블록체인밸리(Blockchain Valley)는 고려대학교를 기반으로 활동하는 블록체인 학회입니다.</DetailItem>
+      <DetailItem>
+        # WEB 3.0의 진정한 가치를 학습하는 공간이자, 블록체인을 통해 미래를 위한 준비를 하는 공간입니다.
+      </DetailItem>
+      <DetailItem>
+        # 구성원(node)간의 수평적 문화를 지향하며, 고려대학교 구성원 외에도 <br />
+        나이, 소속, 출신에 제한 없이 누구나 함께 할 수 있습니다.
+      </DetailItem>
+    </DetailContainer>
+    <Subtitle>Lounge</Subtitle>
+    <DetailPageCarousel>
+      <LoungeImg src={lounge1} alt="학회 라운지 이미지" />
+      <LoungeImg src={lounge2} alt="학회 라운지 이미지" />
+      <LoungeImg src={lounge3} alt="학회 라운지 이미지" />
+      <LoungeImg src={lounge4} alt="학회 라운지 이미지" />
+      <LoungeImg src={lounge5} alt="학회 라운지 이미지" />
+    </DetailPageCarousel>
+  </>
+);
+
+export default DetailPage;
 
 // const StyledSlider = styled(Slider)`
 //   /* Slider */
@@ -131,29 +161,3 @@ const LoungeImg = styled.img`
 //     </div>
 //   );
 // };
-
-const DetailPage = () => (
-  <>
-    <MainTitle>“다가올 WEB 3.0의 미래를 함께 만들어나갈 혁신가들의 공간”</MainTitle>
-    <DetailContainer>
-      <DetailItem># 블록체인밸리(Blockchain Valley)는 고려대학교를 기반으로 활동하는 블록체인 학회입니다.</DetailItem>
-      <DetailItem>
-        # WEB 3.0의 진정한 가치를 학습하는 공간이자, 블록체인을 통해 미래를 위한 준비를 하는 공간입니다.
-      </DetailItem>
-      <DetailItem>
-        # 구성원(node)간의 수평적 문화를 지향하며, 고려대학교 구성원 외에도 <br />
-        나이, 소속, 출신에 제한 없이 누구나 함께 할 수 있습니다.
-      </DetailItem>
-    </DetailContainer>
-    <Subtitle>Lounge</Subtitle>
-    <DetailPageCarousel>
-      <LoungeImg src={lounge1} alt="학회 라운지 이미지" />
-      <LoungeImg src={lounge2} alt="학회 라운지 이미지" />
-      <LoungeImg src={lounge3} alt="학회 라운지 이미지" />
-      <LoungeImg src={lounge4} alt="학회 라운지 이미지" />
-      <LoungeImg src={lounge5} alt="학회 라운지 이미지" />
-    </DetailPageCarousel>
-  </>
-);
-
-export default DetailPage;
