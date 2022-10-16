@@ -5,19 +5,30 @@ import axios from 'axios';
 import useInput from '../hooks/useInput';
 import Modal from './Modal';
 
+const EmailTxt = styled.div`
+  margin-top: 10vh;
+  font-size: 2.5rem;
+  font-weight: 500;
+  @media all and (min-width: 768px) {
+    display: none;
+  }
+`;
+
 const FormBox = styled.div`
   background-color: #fafafa;
   border-radius: 7px;
   width: 40vw;
   padding: 1vh 6vh 5vh 6vh;
   color: black;
-  /* position: absolute;
-  left: 60%;
-  top: 15%; */
-  /* transform: translate(-50%, -50%); */
-  /* height: 68vh; */
   overflow: hidden;
   margin: 0 0 10vh 5vw;
+  @media all and (max-width: 768px) {
+    width: 90vw;
+    padding: 1vh 3vh 4vh 3vh;
+    color: black;
+    overflow: hidden;
+    margin: 1rem 0;
+  }
 `;
 
 const TextBox = styled.textarea`
@@ -56,6 +67,12 @@ const Button = styled.button`
     background-color: #5385da;
     cursor: pointer;
     box-shadow: 0px 4px 12px #8091d8;
+  }
+
+  @media all and (max-width: 768px) {
+    margin: 1.5vh auto;
+    width: 5rem;
+    height: 3rem;
   }
 `;
 
@@ -112,6 +129,7 @@ const EmailToUs = () => {
 
   return (
     <>
+      <EmailTxt>Send Mail</EmailTxt>
       <FormBox>
         <form ref={form} onSubmit={sendEmail} autoComplete="off">
           <TextFieldBox>

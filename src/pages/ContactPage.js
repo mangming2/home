@@ -9,6 +9,13 @@ const ContactBox = styled.div`
   justify-content: flex-start;
   padding: 1rem 11.7vw 0 11.7vw;
   margin-top: 15vh;
+
+  @media all and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    padding: 0rem 5vw 0 5vw;
+    margin-top: 0vh;
+  }
 `;
 
 const ContactPage = () => (

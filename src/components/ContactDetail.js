@@ -12,6 +12,15 @@ const Box = styled.div`
   margin: 0 5vw 10vh 0;
   display: flex;
   flex-direction: column;
+
+  @media all and (max-width: 768px) {
+    width: 90vw;
+    margin: 0 5vw 10vh 5vw;
+    /* height: 100vh; */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const FooterContainer = styled.div`
@@ -19,16 +28,7 @@ const FooterContainer = styled.div`
   flex-direction: column;
   align-items: center;
   flex: 1;
-  /* text-align: center; */
 `;
-
-// const FooterTitle = styled.h3`
-//   /* width: 378px; */
-//   font-weight: 600;
-//   font-size: 1rem;
-//   line-height: 38px;
-//   margin-bottom: 20px;
-// `;
 
 const Title = styled.p`
   font-size: 2.5rem;
@@ -41,20 +41,31 @@ const Detail = styled.p`
   font-size: 1.2rem;
   margin-top: 1rem;
   line-height: 150%;
+  word-break: keep-all;
+  @media all and (max-width: 768px) {
+    width: 90vw;
+    white-space: pre-line;
+  }
 `;
 
 const FollowUs = styled(FooterContainer)`
   margin-top: 15vh;
+  @media all and (max-width: 768px) {
+    width: 100%;
+    margin-top: 1vh;
+  }
 `;
-
-// const FollowUsTitle = styled(FooterTitle)`
-//   font-weight: 300;
-//   font-size: 2rem;
-// `;
 
 const FollowUsLogos = styled.div`
   display: flex;
   /* margin-top: 10px; */
+  @media all and (max-width: 768px) {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    justify-content: center;
+  }
 `;
 
 const FollowUsLogoImg = styled.img`
@@ -98,6 +109,15 @@ const ContactBox = styled.div`
   flex-direction: column;
   align-items: left;
   justify-content: space-between;
+
+  @media all and (max-width: 768px) {
+    height: 9rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-between;
+  }
 `;
 
 const DetailBox = styled.div`
@@ -105,6 +125,9 @@ const DetailBox = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: left;
+  @media all and (max-width: 768px) {
+    margin-top: 1rem;
+  }
 `;
 
 const ImgBox = styled.div`
@@ -122,6 +145,13 @@ const DetailText = styled.p`
   font-weight: 300;
   font-size: 1.2rem;
   display: inline;
+  @media all and (max-width: 768px) {
+    max-width: 100vw;
+    font-weight: 300;
+    font-size: 1.2rem;
+    display: inline;
+    line-height: 150%;
+  }
 `;
 
 const DetailTextLink = styled.a`
@@ -130,6 +160,13 @@ const DetailTextLink = styled.a`
   font-size: 1.2rem;
   display: inline;
   line-height: 150%;
+  @media all and (max-width: 768px) {
+    max-width: 100vw;
+    font-weight: 300;
+    font-size: 1.2rem;
+    display: inline;
+    line-height: 150%;
+  }
 `;
 
 const ContentsContainer = styled.div`
@@ -142,8 +179,8 @@ function ContactDetail() {
       <ContentsContainer>
         <Title>Contact us</Title>
         <Detail>
-          WEB3의 진정한 가치를 학습하는 공간 블록체인밸리입니다.
-          <br /> 블록체인밸리와의 파트너십 및 협력 혹은 요청 사항이 있으시다면 언제든지 편하게 연락주세요.
+          WEB3의 진정한 가치를 학습하는 공간 블록체인밸리입니다. 블록체인밸리와의 파트너십 및 협력 혹은 요청 사항이
+          있으시다면 언제든지 편하게 연락주세요.
         </Detail>
         <ContactBox>
           <DetailBox>
@@ -171,7 +208,6 @@ function ContactDetail() {
         </ContactBox>
       </ContentsContainer>
       <FollowUs>
-        {/* <FollowUsTitle>Follow us</FollowUsTitle> */}
         <FollowUsLogos>
           <FollowUsLogoLink rel="noopener noreferrer" target="_blank" href="https://discord.gg/RFAWQz8S3J">
             <FollowUsLogoImg src={Discord} alt="블록체인 밸리 디스코드"></FollowUsLogoImg>
