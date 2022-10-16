@@ -95,7 +95,7 @@ const Header = () => {
           </LogoLink>
           <FaIcons.FaBars fontSize={22} onClick={showSidebar} />
         </HeaderContainer>
-        <Sidebar className={sidebar ? '' : 'active'}>
+        <Sidebar className={sidebar ? 'active' : ''}>
           <SidebarContainer>
             <PageList>
               <PageItem>
@@ -276,6 +276,7 @@ const PageItem = styled.li`
 
   @media all and (max-width: 768px) {
     margin-left: 0;
+    margin-bottom: 0.6rem;
     display: flex;
     justify-content: left;
     align-items: left;
@@ -297,18 +298,6 @@ const PageLink = styled(NavLink)`
     position: relative;
     font-weight: 800;
     color: #fff;
-    /* color: red; */
-
-    /* &::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      right: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background-color: #fff;
-    } */
   }
 `;
 
@@ -316,6 +305,10 @@ const PageTxt = styled.span`
   font-size: 1.1rem;
   /* letter-spacing: -3%; */
   vertical-align: center;
+
+  @media all and (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export default Header;
