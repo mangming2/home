@@ -299,14 +299,20 @@ const PageLink = styled(NavLink)`
     font-weight: 800;
     color: #fff;
   }
+
+  @media add and (max-width: 768px) {
+    width: 100vw;
+    background-color: red;
+  }
 `;
 
-const PageTxt = styled.span`
+const PageTxt = styled.div`
   font-size: 1.1rem;
   /* letter-spacing: -3%; */
   vertical-align: center;
 
   @media all and (max-width: 768px) {
+    width: 100vw;
     font-size: 1.5rem;
   }
 `;
