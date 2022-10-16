@@ -58,7 +58,7 @@ function JoinPage() {
     });
   };
   const onCallback = () => {
-    console.log('awesome');
+    // console.log('awesome');
   };
   const [scrollY, setScrollY] = useState(0);
   const handleScroll = () => {
@@ -75,8 +75,8 @@ function JoinPage() {
     };
   });
 
-  console.log('this is scrolly' + scrollY);
-  console.log('this is windowHeight' + windowSize.height);
+  // console.log('this is scrolly' + scrollY);
+  // console.log('this is windowHeight' + windowSize.height);
 
   return (
     <Main>

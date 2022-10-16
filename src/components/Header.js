@@ -1,7 +1,81 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import LogoWhite from '../assets/bv_logo_white.png';
+
+const Header = () => {
+  const [showBackground, setShowBackground] = useState(false);
+  const headerBackroundHandler = current => {
+    if (current === '/home') {
+      setShowBackground(false);
+    } else {
+      setShowBackground(true);
+    }
+  };
+
+  useEffect(() => {
+    headerBackroundHandler(window.location.pathname);
+  }, []);
+
+  return (
+    <StyledHeader className={showBackground ? 'isActive' : ''}>
+      <Logo>
+        <LogoLink to="/home">
+          <img height={44} src={LogoWhite} alt="블록체인 밸리" />
+        </LogoLink>
+      </Logo>
+      <Nav>
+        <PageList>
+          <PageItem>
+            <PageLink to="/home">
+              <PageTxt
+                onClick={() => {
+                  setShowBackground(false);
+                }}>
+                Home
+              </PageTxt>
+            </PageLink>
+          </PageItem>
+          <PageItem>
+            <PageLink to="/about">
+              <PageTxt
+                onClick={() => {
+                  setShowBackground(true);
+                }}>
+                About Us
+              </PageTxt>
+            </PageLink>
+          </PageItem>
+          {/* <PageItem>
+          <PageLink to="/log" >
+            <PageTxt>Log</PageTxt>
+          </PageLink>
+        </PageItem> */}
+          <PageItem>
+            <PageLink to="/contact">
+              <PageTxt
+                onClick={() => {
+                  setShowBackground(true);
+                }}>
+                Contact
+              </PageTxt>
+            </PageLink>
+          </PageItem>
+          <PageItem>
+            <PageLink to="/join">
+              <PageTxt
+                onClick={() => {
+                  setShowBackground(true);
+                }}>
+                Join Us
+              </PageTxt>
+            </PageLink>
+          </PageItem>
+        </PageList>
+      </Nav>
+    </StyledHeader>
+  );
+};
 
 const StyledHeader = styled.header`
   position: fixed;
@@ -15,9 +89,11 @@ const StyledHeader = styled.header`
   z-index: 9900;
   padding: 0 11.7vw 0 11.7vw;
   opacity: 100%;
+
   /* background-color: #0b0811; */
   &.isActive {
     background-color: #0b0811;
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.8);
   }
 `;
 
@@ -82,72 +158,5 @@ const PageTxt = styled.span`
   /* letter-spacing: -3%; */
   vertical-align: center;
 `;
-
-const Header = () => {
-  const [showBackground, setShowBackground] = useState(false);
-
-  return (
-    <StyledHeader className={showBackground ? 'isActive' : ''}>
-      <Logo>
-        <LogoLink
-          to="/home"
-          onClick={() => {
-            setShowBackground(false);
-          }}>
-          <img height={44} src={LogoWhite} alt="블록체인 밸리" />
-        </LogoLink>
-      </Logo>
-      <Nav>
-        <PageList>
-          <PageItem>
-            <PageLink to="/home">
-              <PageTxt
-                onClick={() => {
-                  setShowBackground(false);
-                }}>
-                Home
-              </PageTxt>
-            </PageLink>
-          </PageItem>
-          <PageItem>
-            <PageLink to="/about">
-              <PageTxt
-                onClick={() => {
-                  setShowBackground(true);
-                }}>
-                About Us
-              </PageTxt>
-            </PageLink>
-          </PageItem>
-          {/* <PageItem>
-          <PageLink to="/log" >
-            <PageTxt>Log</PageTxt>
-          </PageLink>
-        </PageItem> */}
-          <PageItem>
-            <PageLink to="/contact">
-              <PageTxt
-                onClick={() => {
-                  setShowBackground(true);
-                }}>
-                Contact
-              </PageTxt>
-            </PageLink>
-          </PageItem>
-          <PageItem>
-            <PageLink to="/join">
-              <PageTxt
-                onClick={() => {
-                  setShowBackground(true);
-                }}>
-                Join Us
-              </PageTxt>
-            </PageLink>
-          </PageItem>
-        </PageList>
-      </Nav>
-    </StyledHeader>
-  );
-};
 
 export default Header;
