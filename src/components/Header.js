@@ -20,7 +20,11 @@ const Header = () => {
   return (
     <StyledHeader className={showBackground ? 'isActive' : ''}>
       <Logo>
-        <LogoLink to="/home">
+        <LogoLink
+          to="/home"
+          onClick={() => {
+            setShowBackground(false);
+          }}>
           <img height={44} src={LogoWhite} alt="블록체인 밸리" />
         </LogoLink>
       </Logo>

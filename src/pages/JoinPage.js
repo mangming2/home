@@ -75,8 +75,8 @@ function JoinPage() {
     };
   });
 
-  // console.log('this is scrolly' + scrollY);
-  // console.log('this is windowHeight' + windowSize.height);
+  console.log('this is scrolly' + scrollY);
+  console.log('this is windowHeight' + windowSize.height);
 
   return (
     <Main>
