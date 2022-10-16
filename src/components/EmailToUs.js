@@ -27,7 +27,7 @@ const FormBox = styled.div`
     padding: 1vh 3vh 4vh 3vh;
     color: black;
     overflow: hidden;
-    margin: 1rem 0;
+    margin: 2rem 0;
   }
 `;
 

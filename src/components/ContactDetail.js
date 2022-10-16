@@ -44,6 +44,7 @@ const Detail = styled.p`
   word-break: keep-all;
   @media all and (max-width: 768px) {
     width: 90vw;
+    margin-top: 2rem;
     white-space: pre-line;
   }
 `;

@@ -14,6 +14,11 @@ const StyledFooter = styled.footer`
   color: #a5a5a5;
   justify-content: center;
   align-items: center;
+
+  @media all and (max-width: 768px) {
+    margin-top: 2rem;
+    height: 8rem;
+  }
 `;
 
 const FooterContainer = styled.div`
@@ -23,6 +28,14 @@ const FooterContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0 11.7vw;
+
+  @media all and (max-width: 768px) {
+    display: flex;
+    width: 90vw;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+  }
 `;
 
 const FooterLogo = styled.div`
@@ -62,6 +75,10 @@ const LeftContainer = styled(RightContainer)`
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
+
+  @media all and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const Footer = () => (
