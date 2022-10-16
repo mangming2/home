@@ -29,13 +29,18 @@ const MembersPage = () => {
       .get(`https://bv-main-db-server.herokuapp.com/nodeInfo?generation=${gen}&image=y`)
       .then(res => {
         setNodeData(res.data);
+        // console.log(res.data);
       })
       .catch(err => console.log(err));
 
   useEffect(() => {
     loadData();
-    console.log(nodeData);
   }, [selectedGeneration]);
+
+  const instagramIdToLink = id => {
+    const link = `https://www.instagram.com/${id.substr(1)}/`;
+    return link;
+  };
 
   return (
     <Container>
@@ -56,37 +61,47 @@ const MembersPage = () => {
           <LoadingAnimation src={loading} />
         </Loading>
       ) : (
-        <MembersContainer>
-          {nodeData.map((node, idx) => (
-            <Card key={idx}>
-              <Img src={node.IMAGE_LINK} alt={node.NAME} />
-              <NameContainer>
-                <NameTxt>{node.NAME}</NameTxt>
-                <InfoTxt>
-                  {node.GENERATION}기 | {node.ROLE === 'dev' ? '개발팀' : '리서치팀'}
-                </InfoTxt>
-              </NameContainer>
-              {node.EMAIL === '' ? null : <ContactlTxt>{node.EMAIL}</ContactlTxt>}
-              <LogoContainer>
-                {node.INSTAGRAM === '' ? null : (
-                  <FollowUsLogoLink rel="noopener noreferrer" target="_blank" href={node.INSTAGRAM}>
-                    <Logo src={instagramLogo} />
-                  </FollowUsLogoLink>
-                )}
-                {node.GITHUB === '' ? null : (
-                  <FollowUsLogoLink rel="noopener noreferrer" target="_blank" href={node.GITHUB}>
-                    <Logo src={githubLogo} />
-                  </FollowUsLogoLink>
-                )}
-                {node.MIDIUM === '' ? null : (
-                  <FollowUsLogoLink rel="noopener noreferrer" target="_blank" href={node.MIDIUM}>
-                    <Logo src={mediumLogo} />
-                  </FollowUsLogoLink>
-                )}
-              </LogoContainer>
-            </Card>
-          ))}
-        </MembersContainer>
+        <CardContainer>
+          <MembersContainer>
+            {nodeData.map((node, idx) => (
+              <Card key={idx}>
+                <Img src={node.IMAGE_LINK} alt={node.NAME} />
+                <NameContainer>
+                  <NameTxt>{node.NAME}</NameTxt>
+                  <InfoTxt>
+                    {node.GENERATION}기 | {node.ROLE === 'dev' ? '개발팀' : '리서치팀'}
+                  </InfoTxt>
+                </NameContainer>
+                {node.EMAIL === '' ? null : <ContactlTxt>{node.EMAIL}</ContactlTxt>}
+                <LogoContainer>
+                  {node.GITHUB === undefined || node.GITHUB === '' ? null : (
+                    <FollowUsLogoLink rel="noopener noreferrer" target="_blank" href={node.GITHUB}>
+                      <Logo src={githubLogo} />
+                    </FollowUsLogoLink>
+                  )}
+                  {node.MIDIUM === undefined || node.MIDIUM === '' ? null : (
+                    <FollowUsLogoLink rel="noopener noreferrer" target="_blank" href={node.MIDIUM}>
+                      <Logo
+                        src={mediumLogo}
+                        onClick={() => {
+                          console.log(node.INSTAGRAM, node.GITHUB, node.MIDIUM);
+                        }}
+                      />
+                    </FollowUsLogoLink>
+                  )}
+                  {node.INSTAGRAM === undefined || node.INSTAGRAM === '' ? null : (
+                    <FollowUsLogoLink
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      href={instagramIdToLink(node.INSTAGRAM)}>
+                      <Logo src={instagramLogo} />
+                    </FollowUsLogoLink>
+                  )}
+                </LogoContainer>
+              </Card>
+            ))}
+          </MembersContainer>
+        </CardContainer>
       )}
     </Container>
   );
@@ -125,11 +140,17 @@ const Logo = styled.img`
 `;
 
 const Container = styled.div`
-  /* margin: 0 11.7vw; */
   display: flex;
   flex-direction: column;
   justify-content: left;
   align-items: left;
+`;
+
+const CardContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: darkgreen; */
 `;
 
 const MembersContainer = styled.div`
@@ -138,16 +159,17 @@ const MembersContainer = styled.div`
   flex-direction: row;
   justify-content: left;
   align-items: center;
-  margin: 0 -2rem;
+  margin: 0 -1rem;
+  /* background-color: lightgreen; */
 `;
 
 const Card = styled.div`
   padding: 25px;
   width: 300px;
   height: 478px;
-  margin: 2rem;
+  margin: 2rem 2rem 2rem 1.1rem;
   background-color: rgba(217, 217, 217, 0.2);
-  box-shadow: 0px 0px 35px 11px rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 0px 35px 11px rgba(255, 255, 255, 0.13);
   border-radius: 44px;
   display: flex;
   flex-direction: column;
