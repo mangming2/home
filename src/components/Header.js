@@ -6,7 +6,7 @@ import LogoWhite from '../assets/bv_logo_white.png';
 const Header = () => {
   const [showBackground, setShowBackground] = useState(false);
   const headerBackroundHandler = current => {
-    if (current === '/home') {
+    if (current === '/home' || current === '/') {
       setShowBackground(false);
     } else {
       setShowBackground(true);
