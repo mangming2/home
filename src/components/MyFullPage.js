@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { FullPage, Slide } from 'react-full-page';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import MediumCard from './MediumCard';
@@ -130,6 +129,9 @@ const Middle = styled.p`
   font-weight: 600;
   text-shadow: 0px 0px 50px rgba(6, 61, 285, 0.8);
   margin-bottom: 3vh;
+  @media all and (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const PBox = styled.div`
@@ -204,74 +206,66 @@ function MyFullPage() {
   console.log('this is scrolly' + scrollY);
   console.log('this is windowHeight' + windowSize.height);
   return (
-    <FullPage>
-      <Slide>
-        <SlideBox height={windowSize.height} width={windowSize.width}>
-          <ImgBox>
-            <Fullimg src={FirstImg} alt="first img"></Fullimg>
-          </ImgBox>
-          <PBox>
-            <Middle>다가올 WEB 3.0의 미래를 함께</Middle>
-            <Middle>만들어나갈 혁신가들의 공간</Middle>
-          </PBox>
-        </SlideBox>
-      </Slide>
-      <Slide>
-        <SecondTotal>
-          <SecondBox>
-            <div>
-              <Icon src={FirstIcon} alt="icon 1"></Icon>
-            </div>
-            <Text>
-              <Title>Our Vision</Title>
-              <Detail>WEB3의 진정한 가치를 학습하는 공간, 자신의 미래를 위해 준비를 하는 공간. </Detail>
-            </Text>
-          </SecondBox>
-          <SecondBox>
-            <Text2>
-              <Title>Our activities</Title>
-              <Detail>
-                현재 18명의 리서처팀과 19명의 개발팀으로 구성되어 있으며, 총 37명이 노드로 활동하며 활발한 리서치 활동과
-                프로덕트 개발을 하고 있습니다.
-              </Detail>
-            </Text2>
-            <div>
-              <Icon src={SecondIcon} alt="icon 2"></Icon>
-            </div>
-          </SecondBox>
-        </SecondTotal>
-      </Slide>
-      <Slide>
-        <Third>
+    <>
+      <SlideBox height={windowSize.height} width={windowSize.width}>
+        <ImgBox>
+          <Fullimg src={FirstImg} alt="first img"></Fullimg>
+        </ImgBox>
+        <PBox>
+          <Middle>다가올 WEB 3.0의 미래를 함께</Middle>
+          <Middle>만들어나갈 혁신가들의 공간</Middle>
+        </PBox>
+      </SlideBox>
+      <SecondTotal>
+        <SecondBox>
           <div>
-            <MediumTitle>Recent Medium</MediumTitle>
+            <Icon src={FirstIcon} alt="icon 1"></Icon>
           </div>
-          <MediumCard />
-        </Third>
-      </Slide>
-      <Slide>
-        <LastContent>
-          <ExceptFooter height={windowSize.height - 189.2}>
-            <GoToJoin>
-              <JoinTitle>Join us</JoinTitle>
-              <JoinText>
-                <BoldDetail>우리는 혼자 할 수 없고, 함께해야만 할 수 있다는 것을 확신합니다.</BoldDetail>
-                <JoinDetail>WEB 3.0이라는 거대한 물결에 함께 올라탈</JoinDetail>
-                <JoinDetail>예비 노드 여러분의 지원을 기다립니다.</JoinDetail>
-                <button className="w-btn-neon2" type="button">
-                  <NavLink to="/join">Join us</NavLink>
-                </button>
-              </JoinText>
-            </GoToJoin>
-            <Sponsor>
-              <JoinTitle>Our Partners</JoinTitle>
-              <SponsorBox src={Partners}></SponsorBox>
-            </Sponsor>
-          </ExceptFooter>
-          <Footer />
-        </LastContent>
-      </Slide>
-    </FullPage>
+          <Text>
+            <Title>Our Vision</Title>
+            <Detail>WEB3의 진정한 가치를 학습하는 공간, 자신의 미래를 위해 준비를 하는 공간. </Detail>
+          </Text>
+        </SecondBox>
+        <SecondBox>
+          <Text2>
+            <Title>Our activities</Title>
+            <Detail>
+              현재 18명의 리서처팀과 19명의 개발팀으로 구성되어 있으며, 총 37명이 노드로 활동하며 활발한 리서치 활동과
+              프로덕트 개발을 하고 있습니다.
+            </Detail>
+          </Text2>
+          <div>
+            <Icon src={SecondIcon} alt="icon 2"></Icon>
+          </div>
+        </SecondBox>
+      </SecondTotal>
+      <Third>
+        <div>
+          <MediumTitle>Recent Medium</MediumTitle>
+        </div>
+        <MediumCard />
+      </Third>
+      <LastContent>
+        <ExceptFooter height={windowSize.height - 189.2}>
+          <GoToJoin>
+            <JoinTitle>Join us</JoinTitle>
+            <JoinText>
+              <BoldDetail>우리는 혼자 할 수 없고, 함께해야만 할 수 있다는 것을 확신합니다.</BoldDetail>
+              <JoinDetail>WEB 3.0이라는 거대한 물결에 함께 올라탈</JoinDetail>
+              <JoinDetail>예비 노드 여러분의 지원을 기다립니다.</JoinDetail>
+              <button className="w-btn-neon2" type="button">
+                <NavLink to="/join">Join us</NavLink>
+              </button>
+            </JoinText>
+          </GoToJoin>
+          <Sponsor>
+            <JoinTitle>Our Partners</JoinTitle>
+            <SponsorBox src={Partners}></SponsorBox>
+          </Sponsor>
+        </ExceptFooter>
+        <Footer />
+      </LastContent>
+    </>
   );
 }
 
