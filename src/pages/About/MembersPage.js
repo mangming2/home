@@ -150,7 +150,6 @@ const CardContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color: darkgreen; */
 `;
 
 const MembersContainer = styled.div`
@@ -161,6 +160,10 @@ const MembersContainer = styled.div`
   align-items: center;
   margin: 0 -1rem;
   /* background-color: lightgreen; */
+
+  @media all and (max-width: 768px) {
+    margin: 0;
+  }
 `;
 
 const Card = styled.div`
@@ -174,6 +177,9 @@ const Card = styled.div`
   display: flex;
   flex-direction: column;
   align-items: left;
+  @media all and (max-width: 768px) {
+    margin: 2rem;
+  }
 `;
 
 const NameContainer = styled.div`

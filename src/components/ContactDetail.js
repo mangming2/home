@@ -161,6 +161,7 @@ const DetailTextLink = styled.a`
   font-size: 1.2rem;
   display: inline;
   line-height: 150%;
+  word-break: keep-all;
   @media all and (max-width: 768px) {
     max-width: 100vw;
     font-weight: 300;
@@ -195,7 +196,7 @@ function ContactDetail() {
               <DetailImg src={Location} alt="icon"></DetailImg>
             </ImgBox>
             <DetailTextLink rel="noopener noreferrer" href="http://kko.to/En-xxmhJh" target="_blank">
-              서울특별시 성북구 고려대로24길 56 4층
+              서울특별시 성북구 고려대로 24길 56 4층
             </DetailTextLink>
           </DetailBox>
           <DetailBox>

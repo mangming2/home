@@ -13,6 +13,10 @@ const MainInner = styled.div`
   flex-direction: column;
   width: 100vw;
   padding: 0 11.7vw;
+  @media all and (max-width: 768px) {
+    padding-top: 0rem;
+    padding: 0 5vw;
+  }
 `;
 
 const Tablist = styled.div`
@@ -22,6 +26,10 @@ const Tablist = styled.div`
   padding: 30px 0;
   width: 100%;
   margin: 0 auto;
+
+  @media all and (max-width: 768px) {
+    padding: 0;
+  }
 `;
 
 const Tab = styled.div`
@@ -45,6 +53,12 @@ const Tab = styled.div`
   & + & {
     margin-left: 4rem;
   }
+
+  @media all and (max-width: 768px) {
+    & + & {
+      margin-left: 2rem;
+    }
+  }
 `;
 
 const TabTxt = styled.span`
@@ -64,6 +78,10 @@ const TabTxt = styled.span`
     font-weight: 600;
     color: #ffffff;
     text-shadow: 0px 8px 43px rgba(19, 72, 224, 0.75);
+  }
+
+  @media all and (max-width: 768px) {
+    font-size: 2rem;
   }
 `;
 

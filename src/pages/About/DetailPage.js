@@ -13,6 +13,12 @@ const MainTitle = styled.h2`
   font-size: 36px;
   text-align: center;
   color: #ffffff;
+
+  @media all and (max-width: 768px) {
+    font-size: 2.1rem;
+    line-height: 150%;
+    word-break: keep-all;
+  }
 `;
 
 const Subtitle = styled.h3`
@@ -20,6 +26,11 @@ const Subtitle = styled.h3`
   font-size: 32px;
   margin-top: 200px;
   /* margin-left: 80px; */
+
+  @media all and (max-width: 768px) {
+    font-size: 2rem;
+    margin: 6rem 0 2rem 0;
+  }
 `;
 
 const DetailContainer = styled.div`
@@ -39,6 +50,12 @@ const DetailItem = styled.p`
   & + & {
     margin-top: 32px;
   }
+
+  @media all and (max-width: 768px) {
+    font-size: 1.3rem;
+    line-height: 150%;
+    word-break: keep-all;
+  }
 `;
 
 // const SliderContainer = styled.div`
@@ -54,14 +71,34 @@ const DetailItem = styled.p`
 const LoungeImg = styled.img`
   width: 18vw;
   border-radius: 1.4rem;
-  /* border-radius: 5px; */
   & + & {
     margin-left: 2;
   }
+
+  @media all and (max-width: 768px) {
+    width: 80vw;
+    border-radius: 1.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5vw;
+  }
+`;
+
+const CarouselContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const MainContainer = styled.div`
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
 `;
 
 const DetailPage = () => (
-  <>
+  <MainContainer>
     <MainTitle>“다가올 WEB 3.0의 미래를 함께 만들어나갈 혁신가들의 공간”</MainTitle>
     <DetailContainer>
       <DetailItem># 블록체인밸리(Blockchain Valley)는 고려대학교를 기반으로 활동하는 블록체인 학회입니다.</DetailItem>
@@ -74,14 +111,17 @@ const DetailPage = () => (
       </DetailItem>
     </DetailContainer>
     <Subtitle>Lounge</Subtitle>
-    <DetailPageCarousel>
-      <LoungeImg src={lounge1} alt="학회 라운지 이미지" />
-      <LoungeImg src={lounge2} alt="학회 라운지 이미지" />
-      <LoungeImg src={lounge3} alt="학회 라운지 이미지" />
-      <LoungeImg src={lounge4} alt="학회 라운지 이미지" />
-      <LoungeImg src={lounge5} alt="학회 라운지 이미지" />
-    </DetailPageCarousel>
-  </>
+
+    <CarouselContainer>
+      <DetailPageCarousel>
+        <LoungeImg src={lounge1} alt="학회 라운지 이미지" />
+        <LoungeImg src={lounge2} alt="학회 라운지 이미지" />
+        <LoungeImg src={lounge3} alt="학회 라운지 이미지" />
+        <LoungeImg src={lounge4} alt="학회 라운지 이미지" />
+        <LoungeImg src={lounge5} alt="학회 라운지 이미지" />
+      </DetailPageCarousel>
+    </CarouselContainer>
+  </MainContainer>
 );
 
 export default DetailPage;

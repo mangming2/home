@@ -43,7 +43,9 @@ const FooterLogo = styled.div`
   margin-bottom: 1rem;
 `;
 
-const AddressLink = styled.a``;
+const AddressLink = styled.a`
+  word-break: keep-all;
+`;
 
 const Txt = styled.div`
   font-size: 0.75rem;
