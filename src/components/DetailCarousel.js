@@ -4,6 +4,7 @@ import AliceCarousel from 'react-alice-carousel';
 import './detailCarousel.css';
 
 const Contain = styled.div`
+  width: 76.6vw;
   display: flex;
   align-items: center;
   margin: 3vw 0 5vw 0;

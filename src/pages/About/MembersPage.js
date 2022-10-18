@@ -29,7 +29,7 @@ const MembersPage = () => {
       .get(`https://bv-main-db-server.herokuapp.com/nodeInfo?generation=${gen}&image=y`)
       .then(res => {
         setNodeData(res.data);
-        // console.log(res.data);
+        console.log(res.data);
       })
       .catch(err => console.log(err));
 
