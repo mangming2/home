@@ -1673,7 +1673,21 @@
   "resolved" "https://registry.npmjs.org/@leichtgewicht/ip-codec/-/ip-codec-2.0.4.tgz"
   "version" "2.0.4"
 
-"@mui/base@^5.0.0-alpha.97", "@mui/base@5.0.0-alpha.101":
+"@mui/base@^5.0.0-alpha.97":
+  "integrity" "sha512-4IPBcJQIgVVXQvN6DQMoCHed52GBtwSqYs0jD0dDcMR3o76AodQtpEeWFz3p7mJoc6f/IHBl9U6jEfL1r/kM4g=="
+  "resolved" "https://registry.npmjs.org/@mui/base/-/base-5.0.0-alpha.105.tgz"
+  "version" "5.0.0-alpha.105"
+  dependencies:
+    "@babel/runtime" "^7.19.0"
+    "@emotion/is-prop-valid" "^1.2.0"
+    "@mui/types" "^7.2.0"
+    "@mui/utils" "^5.10.9"
+    "@popperjs/core" "^2.11.6"
+    "clsx" "^1.2.1"
+    "prop-types" "^15.8.1"
+    "react-is" "^18.2.0"
+
+"@mui/base@5.0.0-alpha.101":
   "integrity" "sha512-a54BcXvArGOKUZ2zyS/7B9GNhAGgfomEQSkfEZ88Nc9jKvXA+Mppenfz5o4JCAnD8c4VlePmz9rKOYvvum1bZw=="
   "resolved" "https://registry.npmjs.org/@mui/base/-/base-5.0.0-alpha.101.tgz"
   "version" "5.0.0-alpha.101"
@@ -1730,9 +1744,9 @@
     "prop-types" "^15.8.1"
 
 "@mui/system@^5.10.6", "@mui/system@^5.10.9":
-  "integrity" "sha512-B6fFC0sK06hNmqY7fAUfwShQv594+u/DT1YEFHPtK4laouTu7V4vSGQWi1WJT9Bjs9Db5D1bRDJ+Yy+tc3QOYA=="
-  "resolved" "https://registry.npmjs.org/@mui/system/-/system-5.10.9.tgz"
-  "version" "5.10.9"
+  "integrity" "sha512-Xzx26Asu5fVlm0ucm+gnJmeX4Y1isrpVDvqxX4yJaOT7Fzmd8Lfq9ih3QMfZajns5LMtUiOuCQlVFRtUG5IY7A=="
+  "resolved" "https://registry.npmjs.org/@mui/system/-/system-5.10.13.tgz"
+  "version" "5.10.13"
   dependencies:
     "@babel/runtime" "^7.19.0"
     "@mui/private-theming" "^5.10.9"
@@ -5205,11 +5219,6 @@
   "integrity" "sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw=="
   "resolved" "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz"
   "version" "1.0.0"
-
-"fsevents@^2.3.2", "fsevents@~2.3.2":
-  "integrity" "sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA=="
-  "resolved" "https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz"
-  "version" "2.3.2"
 
 "fullpage.js@^4.0.11":
   "integrity" "sha512-2YWG9mIfUqAPz8eFPHsSq/rMWT5xv+2C6dxQ6bljj1m31MgvhWNU3r+sa5+Ds35QThyrL3uo9RUPCxolp3SjuQ=="
